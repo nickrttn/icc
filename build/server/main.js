@@ -3,12 +3,6 @@ module.exports =
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
-/******/ 	// object to store loaded chunks
-/******/ 	// "0" means "already loaded"
-/******/ 	var installedChunks = {
-/******/ 		2: 0
-/******/ 	};
-/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
@@ -33,21 +27,6 @@ module.exports =
 /******/ 		return module.exports;
 /******/ 	}
 /******/
-/******/ 	// This file contains only the entry chunk.
-/******/ 	// The chunk loading function for additional chunks
-/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
-/******/ 		// "0" is the signal for "already loaded"
-/******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({}[chunkId]||chunkId) + "-" + {"0":"fe25db3cf57df4a98f15","1":"d4907371af8813bf2880"}[chunkId] + ".js");
-/******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
-/******/ 			for(var moduleId in moreModules) {
-/******/ 				modules[moduleId] = moreModules[moduleId];
-/******/ 			}
-/******/ 			for(var i = 0; i < chunkIds.length; i++)
-/******/ 				installedChunks[chunkIds[i]] = 0;
-/******/ 		}
-/******/ 		return Promise.resolve();
-/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -80,17 +59,10 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/ 	// uncatched error handler for webpack runtime
-/******/ 	__webpack_require__.oe = function(err) {
-/******/ 		process.nextTick(function() {
-/******/ 			throw err; // catch this error by using System.import().catch()
-/******/ 		});
-/******/ 	};
+/******/ 	__webpack_require__.p = "http://localhost:3001/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -106,15 +78,15 @@ module.exports = require("react");
 "use strict";
 'use strict';
 
-var _express = __webpack_require__(8);
+var _express = __webpack_require__(12);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _compression = __webpack_require__(7);
+var _compression = __webpack_require__(11);
 
 var _compression2 = _interopRequireDefault(_compression);
 
-var _path = __webpack_require__(9);
+var _path = __webpack_require__(13);
 
 var _path2 = _interopRequireDefault(_path);
 
@@ -122,31 +94,31 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(10);
+var _server = __webpack_require__(14);
 
-var _RouterContext = __webpack_require__(14);
+var _RouterContext = __webpack_require__(18);
 
 var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
-var _createMemoryHistory = __webpack_require__(15);
+var _createMemoryHistory = __webpack_require__(19);
 
 var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-var _match = __webpack_require__(16);
+var _match = __webpack_require__(20);
 
 var _match2 = _interopRequireDefault(_match);
 
-var _template = __webpack_require__(4);
+var _template = __webpack_require__(6);
 
 var _template2 = _interopRequireDefault(_template);
 
-var _routes = __webpack_require__(3);
+var _routes = __webpack_require__(5);
 
 var _routes2 = _interopRequireDefault(_routes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var clientAssets = __webpack_require__(6); // eslint-disable-line import/no-dynamic-require
+var clientAssets = __webpack_require__(10); // eslint-disable-line import/no-dynamic-require
 var app = (0, _express2.default)();
 
 // Remove annoying Express header addition.
@@ -156,7 +128,7 @@ app.disable('x-powered-by');
 app.use((0, _compression2.default)());
 
 // Setup the public directory so that we can server static assets.
-app.use(_express2.default.static(_path2.default.join(process.cwd(), "build/public")));
+app.use(_express2.default.static(_path2.default.join(process.cwd(), "src/public")));
 
 // Setup server side routing.
 app.get('*', function (request, response) {
@@ -209,11 +181,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Link = __webpack_require__(12);
+var _Link = __webpack_require__(16);
 
 var _Link2 = _interopRequireDefault(_Link);
 
-var _styles = __webpack_require__(5);
+var _styles = __webpack_require__(7);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -291,11 +263,165 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Route = __webpack_require__(13);
+var _styles = __webpack_require__(8);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Home() {
+  return _react2.default.createElement(
+    'section',
+    null,
+    _react2.default.createElement(
+      'p',
+      { className: _styles2.default.paragraph },
+      'Welcome to the ',
+      _react2.default.createElement(
+        'strong',
+        null,
+        'Universal React Starter-kyt'
+      ),
+      '. This starter kyt should serve as the base for an advanced, server-rendered React app.'
+    ),
+    _react2.default.createElement(
+      'p',
+      { className: _styles2.default.paragraph },
+      'Check out the Tools section for an outline of the libraries that are used in this Starter-kyt.'
+    )
+  );
+}
+
+var _default = Home;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(Home, 'Home', '/Users/nickrutten/Developer/cmd/icc/src/components/Home/index.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/nickrutten/Developer/cmd/icc/src/components/Home/index.js');
+}();
+
+;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(9);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Tools() {
+  return _react2.default.createElement(
+    'ul',
+    null,
+    _react2.default.createElement(
+      'li',
+      { className: _styles2.default.tool },
+      _react2.default.createElement(
+        'a',
+        { href: 'https://expressjs.com/' },
+        'Express'
+      ),
+      ' - server-side rendering'
+    ),
+    _react2.default.createElement(
+      'li',
+      { className: _styles2.default.tool },
+      _react2.default.createElement(
+        'a',
+        { href: 'https://facebook.github.io/react/' },
+        'React'
+      ),
+      ' - component library'
+    ),
+    _react2.default.createElement(
+      'li',
+      { className: _styles2.default.tool },
+      _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/reactjs/react-router' },
+        'React Router'
+      ),
+      ' - server and browser routing'
+    ),
+    _react2.default.createElement(
+      'li',
+      { className: _styles2.default.tool },
+      _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/css-modules/css-modules' },
+        'Sass Modules'
+      ),
+      ' - CSS Modules with a Sass pre-processor for styles'
+    ),
+    _react2.default.createElement(
+      'li',
+      { className: _styles2.default.tool },
+      _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/airbnb/enzyme' },
+        'Enzyme'
+      ),
+      ' - React component testing'
+    )
+  );
+}
+
+var _default = Tools;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(Tools, 'Tools', '/Users/nickrutten/Developer/cmd/icc/src/components/Tools/index.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/nickrutten/Developer/cmd/icc/src/components/Tools/index.js');
+}();
+
+;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Route = __webpack_require__(17);
 
 var _Route2 = _interopRequireDefault(_Route);
 
-var _IndexRoute = __webpack_require__(11);
+var _IndexRoute = __webpack_require__(15);
 
 var _IndexRoute2 = _interopRequireDefault(_IndexRoute);
 
@@ -310,7 +436,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // https://gist.github.com/sokra/27b24881210b56bbaff7#code-splitting-with-es6
 
 var importHome = function importHome(nextState, cb) {
-  __webpack_require__.e/* System.import */(1).then(__webpack_require__.bind(null, 18)).then(function (module) {
+  Promise.resolve().then(__webpack_require__.bind(null, 3)).then(function (module) {
     return cb(null, module.default);
   }).catch(function (e) {
     throw e;
@@ -318,7 +444,7 @@ var importHome = function importHome(nextState, cb) {
 };
 
 var importTools = function importTools(nextState, cb) {
-  __webpack_require__.e/* System.import */(0).then(__webpack_require__.bind(null, 19)).then(function (module) {
+  Promise.resolve().then(__webpack_require__.bind(null, 4)).then(function (module) {
     return cb(null, module.default);
   }).catch(function (e) {
     throw e;
@@ -363,7 +489,7 @@ var _temp = function () {
 ;
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports) {
 
 "use strict";
@@ -393,7 +519,7 @@ var _temp = function () {
 ;
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports) {
 
 module.exports = {
@@ -406,78 +532,93 @@ module.exports = {
 };
 
 /***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-module.exports = {
-	"main": {
-		"js": "/main-e6e6ab7e77b88f314618.js",
-		"css": "/main-e6e6ab7e77b88f314618.css"
-	}
-};
-
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-module.exports = require("compression");
-
-/***/ },
 /* 8 */
 /***/ function(module, exports) {
 
-module.exports = require("express");
+module.exports = {
+	"paragraph": "styles-paragraph--220JU"
+};
 
 /***/ },
 /* 9 */
 /***/ function(module, exports) {
 
-module.exports = require("path");
+module.exports = {
+	"tool": "styles-tool--3Brnj"
+};
 
 /***/ },
 /* 10 */
 /***/ function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = {
+	"main": {
+		"js": "http://localhost:3001/main.js"
+	}
+};
 
 /***/ },
 /* 11 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/IndexRoute");
+module.exports = require("compression");
 
 /***/ },
 /* 12 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/Link");
+module.exports = require("express");
 
 /***/ },
 /* 13 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/Route");
+module.exports = require("path");
 
 /***/ },
 /* 14 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/RouterContext");
+module.exports = require("react-dom/server");
 
 /***/ },
 /* 15 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/createMemoryHistory");
+module.exports = require("react-router/lib/IndexRoute");
 
 /***/ },
 /* 16 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/match");
+module.exports = require("react-router/lib/Link");
 
 /***/ },
 /* 17 */
+/***/ function(module, exports) {
+
+module.exports = require("react-router/lib/Route");
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+module.exports = require("react-router/lib/RouterContext");
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+module.exports = require("react-router/lib/createMemoryHistory");
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+module.exports = require("react-router/lib/match");
+
+/***/ },
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(1);
