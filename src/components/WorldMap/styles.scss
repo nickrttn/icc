@@ -1,0 +1,20 @@
+.WorldMapContainer {
+  width: 100%;
+  margin: 0 auto;
+
+  @media screen and (min-width: 40em) {
+    width: 80vw;
+    margin: 5vh auto;
+  }
+}
+
+.WorldMap {
+  max-height: 100vh;
+  min-height: 600px;
+  fill: none;
+  stroke: red;
+}
+
+.WorldMapUserPosition {
+  fill: lightgreen;
+}

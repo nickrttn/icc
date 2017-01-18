@@ -1,0 +1,47 @@
+@import '../../shared-styles/variables';
+
+.introduction {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introductionMask {
+  width: auto;
+  height: 100%;
+  z-index: 2;
+
+  mask {
+    rect {
+      fill: rgba(255, 255, 255, 1);
+    }
+  }
+
+  > rect {
+    fill: $darkGrey;
+    mask: url(#mask);
+  }
+
+  .introductionMaskText {
+    transform-origin: center;
+    transform: scale(0.7);
+  }
+}
+
+.introductionVideo {
+  overflow: hidden;
+}
+
+.introductionVideo video {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.7);
+  transform-origin: center;
+  height: 100%;
+  width: auto;
+}
