@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-// import styles from './styles.scss';
+import styles from './styles.scss';
 
 function App({ children }) {
   return (
-    <div>{children}</div>
+    <div className={ styles.content }>{children}</div>
   );
 }
 

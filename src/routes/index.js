@@ -24,8 +24,8 @@ const importTools = (nextState, cb) => {
 // https://github.com/reactjs/react-router/blob/master/docs/guides/DynamicRouting.md
 const routes = (
   <Route path="/" component={App}>
-    <IndexRoute getComponent={ importToughLove } />
-    <Route path="tools" getComponent={ importTools } />
+    <IndexRoute getComponent={importToughLove} />
+    <Route path="tools" getComponent={importTools} />
   </Route>
 );
 
