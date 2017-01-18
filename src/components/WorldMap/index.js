@@ -77,12 +77,14 @@ class WorldMap extends Component {
             <g className={styles.WorldMapCountries} transform="translate(0, 192)">
               <path d={path(mesh(geoData, geoData.objects.geoCountries))} />
               <UserLocation />
-              { this.filterGeoData().map(country => <circle
-                key={country.name}
-                className={styles.WorldMapCountryHighlight}
-                r="3" fill="blue" stroke="none"
-                cx={`${country.center[0]}`}
-                cy={`${country.center[1]}`} />
+              { this.filterGeoData().map(country =>
+                <circle
+                  key={country.name}
+                  className={styles.WorldMapCountryHighlight}
+                  r="3" fill="blue" stroke="none"
+                  cx={`${country.center[0]}`}
+                  cy={`${country.center[1]}`}
+                />
               )}
             </g>
           </svg>
