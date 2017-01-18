@@ -11,15 +11,10 @@
 .WorldMap {
   max-height: 100vh;
   min-height: 600px;
-
   fill: none;
   stroke: red;
 }
 
-.WorldMapCountries {
-  // transform: translateY(35%);
-}
-
 .WorldMapUserPosition {
-  fill: black;
+  fill: lightgreen;
 }
