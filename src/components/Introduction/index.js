@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './styles.scss';
 
-function WorldMap() {
+function Introduction() {
   return (
-    <section>
-
-    </section>
+    <section>hoi</section>
   );
 }
 
-export default WorldMap;
+export default Introduction;

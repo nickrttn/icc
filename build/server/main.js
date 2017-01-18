@@ -197,34 +197,7 @@ function App(_ref) {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement('i', { className: _styles2.default.logo }),
-    _react2.default.createElement(
-      'ul',
-      { className: _styles2.default.nav },
-      _react2.default.createElement(
-        'li',
-        { className: _styles2.default.navItem },
-        _react2.default.createElement(
-          _Link2.default,
-          { className: _styles2.default.link, to: '/' },
-          'Home'
-        )
-      ),
-      _react2.default.createElement(
-        'li',
-        { className: _styles2.default.navItem },
-        _react2.default.createElement(
-          _Link2.default,
-          { className: _styles2.default.link, to: '/tools' },
-          'Tools'
-        )
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: _styles2.default.content },
-      children
-    )
+    children
   );
 }
 
@@ -269,30 +242,15 @@ var _styles2 = _interopRequireDefault(_styles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Home() {
+function Introduction() {
   return _react2.default.createElement(
     'section',
     null,
-    _react2.default.createElement(
-      'p',
-      { className: _styles2.default.paragraph },
-      'Welcome to the ',
-      _react2.default.createElement(
-        'strong',
-        null,
-        'Universal React Starter-kyt'
-      ),
-      '. This starter kyt should serve as the base for an advanced, server-rendered React app.'
-    ),
-    _react2.default.createElement(
-      'p',
-      { className: _styles2.default.paragraph },
-      'Check out the Tools section for an outline of the libraries that are used in this Starter-kyt.'
-    )
+    'hoi'
   );
 }
 
-var _default = Home;
+var _default = Introduction;
 exports.default = _default;
 ;
 
@@ -301,7 +259,7 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Home, 'Home', '/Users/nickrutten/Developer/cmd/icc/src/components/Home/index.js');
+  __REACT_HOT_LOADER__.register(Introduction, 'Introduction', '/Users/nickrutten/Developer/cmd/icc/src/components/Home/index.js');
 
   __REACT_HOT_LOADER__.register(_default, 'default', '/Users/nickrutten/Developer/cmd/icc/src/components/Home/index.js');
 }();
@@ -522,14 +480,7 @@ var _temp = function () {
 /* 7 */
 /***/ function(module, exports) {
 
-module.exports = {
-	"header": "styles-header--v4bGj",
-	"nav": "styles-nav--1K9AX",
-	"content": "styles-content--3emNR",
-	"navItem": "styles-navItem--2Ex1Q",
-	"link": "styles-link--sYCKm",
-	"logo": "styles-logo--3U9gT"
-};
+
 
 /***/ },
 /* 8 */
