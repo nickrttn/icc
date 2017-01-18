@@ -4,17 +4,23 @@
 
   @media screen and (min-width: 40em) {
     width: 80vw;
-    margin: 5vh auto;
+    margin: 0 auto;
+    padding: 5vh 0;
   }
 }
 
-.WorldMap {
+.WorldMapSVG {
   max-height: 100vh;
   min-height: 600px;
+  width: auto;
   fill: none;
-  stroke: red;
+  stroke: crimson;
 }
 
 .WorldMapUserPosition {
-  fill: lightgreen;
+  fill: pink;
+}
+
+.WorldMapCountryHighlight {
+  fill: gold;
 }
