@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "http://localhost:3001/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 20);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,15 +78,15 @@ module.exports = require("react");
 "use strict";
 'use strict';
 
-var _express = __webpack_require__(12);
+var _express = __webpack_require__(11);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _compression = __webpack_require__(11);
+var _compression = __webpack_require__(10);
 
 var _compression2 = _interopRequireDefault(_compression);
 
-var _path = __webpack_require__(13);
+var _path = __webpack_require__(12);
 
 var _path2 = _interopRequireDefault(_path);
 
@@ -94,17 +94,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(14);
+var _server = __webpack_require__(13);
 
-var _RouterContext = __webpack_require__(17);
+var _RouterContext = __webpack_require__(16);
 
 var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
-var _createMemoryHistory = __webpack_require__(18);
+var _createMemoryHistory = __webpack_require__(17);
 
 var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-var _match = __webpack_require__(19);
+var _match = __webpack_require__(18);
 
 var _match2 = _interopRequireDefault(_match);
 
@@ -118,7 +118,7 @@ var _routes2 = _interopRequireDefault(_routes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var clientAssets = __webpack_require__(10); // eslint-disable-line import/no-dynamic-require
+var clientAssets = __webpack_require__(9); // eslint-disable-line import/no-dynamic-require
 var app = (0, _express2.default)();
 
 // Remove annoying Express header addition.
@@ -181,11 +181,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(7);
-
-var _styles2 = _interopRequireDefault(_styles);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import styles from './styles.scss';
 
 function App(_ref) {
   var children = _ref.children;
@@ -232,7 +230,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(8);
+var _styles = __webpack_require__(7);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -326,18 +324,14 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(9);
+var _styles = __webpack_require__(8);
 
 var _styles2 = _interopRequireDefault(_styles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ToughLove() {
-  return _react2.default.createElement(
-    'section',
-    null,
-    'hoi'
-  );
+  return _react2.default.createElement('article', { className: _styles2.default.content });
 }
 
 var _default = ToughLove;
@@ -371,11 +365,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Route = __webpack_require__(16);
+var _Route = __webpack_require__(15);
 
 var _Route2 = _interopRequireDefault(_Route);
 
-var _IndexRoute = __webpack_require__(15);
+var _IndexRoute = __webpack_require__(14);
 
 var _IndexRoute2 = _interopRequireDefault(_IndexRoute);
 
@@ -476,24 +470,20 @@ var _temp = function () {
 /* 7 */
 /***/ function(module, exports) {
 
-
+module.exports = {
+	"tool": "styles-tool--3Brnj"
+};
 
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
 
 module.exports = {
-	"tool": "styles-tool--3Brnj"
+	"content": "styles-content--17Yap"
 };
 
 /***/ },
 /* 9 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 10 */
 /***/ function(module, exports) {
 
 module.exports = {
@@ -503,61 +493,61 @@ module.exports = {
 };
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports) {
 
 module.exports = require("compression");
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 module.exports = require("express");
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports) {
 
 module.exports = require("path");
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports) {
 
 module.exports = require("react-router/lib/IndexRoute");
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports) {
 
 module.exports = require("react-router/lib/Route");
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports) {
 
 module.exports = require("react-router/lib/RouterContext");
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports) {
 
 module.exports = require("react-router/lib/createMemoryHistory");
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports) {
 
 module.exports = require("react-router/lib/match");
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(1);

@@ -3,7 +3,8 @@ import styles from './styles.scss';
 
 function ToughLove() {
   return (
-    <section>hoi</section>
+    <article className={ styles.content }>
+    </article>
   );
 }
 
