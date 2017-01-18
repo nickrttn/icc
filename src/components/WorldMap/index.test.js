@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './';
+import WorldMap from './';
 
 it('Test example', () => {
-  const wrapper = shallow(<App />);
-  expect(wrapper.is('div')).toBeTruthy();
+  const wrapper = shallow(<WorldMap />);
+  expect(wrapper.is('section')).toBeTruthy();
 });
