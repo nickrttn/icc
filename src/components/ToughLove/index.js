@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './styles.scss';
 
-function Introduction() {
+function ToughLove() {
   return (
     <section>hoi</section>
   );
 }
 
-export default Introduction;
+export default ToughLove;

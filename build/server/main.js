@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "http://localhost:3001/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 21);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -96,15 +96,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(14);
 
-var _RouterContext = __webpack_require__(18);
+var _RouterContext = __webpack_require__(17);
 
 var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
-var _createMemoryHistory = __webpack_require__(19);
+var _createMemoryHistory = __webpack_require__(18);
 
 var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-var _match = __webpack_require__(20);
+var _match = __webpack_require__(19);
 
 var _match2 = _interopRequireDefault(_match);
 
@@ -181,10 +181,6 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Link = __webpack_require__(16);
-
-var _Link2 = _interopRequireDefault(_Link);
-
 var _styles = __webpack_require__(7);
 
 var _styles2 = _interopRequireDefault(_styles);
@@ -237,51 +233,6 @@ var _react = __webpack_require__(0);
 var _react2 = _interopRequireDefault(_react);
 
 var _styles = __webpack_require__(8);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Introduction() {
-  return _react2.default.createElement(
-    'section',
-    null,
-    'hoi'
-  );
-}
-
-var _default = Introduction;
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(Introduction, 'Introduction', '/Users/nickrutten/Developer/cmd/icc/src/components/Home/index.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/nickrutten/Developer/cmd/icc/src/components/Home/index.js');
-}();
-
-;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(9);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -361,6 +312,51 @@ var _temp = function () {
 ;
 
 /***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(9);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ToughLove() {
+  return _react2.default.createElement(
+    'section',
+    null,
+    'hoi'
+  );
+}
+
+var _default = ToughLove;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(ToughLove, 'ToughLove', '/Users/nickrutten/Developer/cmd/icc/src/components/ToughLove/index.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/nickrutten/Developer/cmd/icc/src/components/ToughLove/index.js');
+}();
+
+;
+
+/***/ },
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -375,7 +371,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Route = __webpack_require__(17);
+var _Route = __webpack_require__(16);
 
 var _Route2 = _interopRequireDefault(_Route);
 
@@ -393,8 +389,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // chunking assets. Check out the following for more:
 // https://gist.github.com/sokra/27b24881210b56bbaff7#code-splitting-with-es6
 
-var importHome = function importHome(nextState, cb) {
-  Promise.resolve().then(__webpack_require__.bind(null, 3)).then(function (module) {
+var importToughLove = function importToughLove(nextState, cb) {
+  Promise.resolve().then(__webpack_require__.bind(null, 4)).then(function (module) {
     return cb(null, module.default);
   }).catch(function (e) {
     throw e;
@@ -402,7 +398,7 @@ var importHome = function importHome(nextState, cb) {
 };
 
 var importTools = function importTools(nextState, cb) {
-  Promise.resolve().then(__webpack_require__.bind(null, 4)).then(function (module) {
+  Promise.resolve().then(__webpack_require__.bind(null, 3)).then(function (module) {
     return cb(null, module.default);
   }).catch(function (e) {
     throw e;
@@ -414,7 +410,7 @@ var importTools = function importTools(nextState, cb) {
 var routes = _react2.default.createElement(
   _Route2.default,
   { path: '/', component: _App2.default },
-  _react2.default.createElement(_IndexRoute2.default, { getComponent: importHome }),
+  _react2.default.createElement(_IndexRoute2.default, { getComponent: importToughLove }),
   _react2.default.createElement(_Route2.default, { path: 'tools', getComponent: importTools })
 );
 
@@ -422,7 +418,7 @@ var routes = _react2.default.createElement(
 // routes so we need to require them here as a workaround.
 // https://github.com/gaearon/react-hot-loader/issues/288
 if (false) {
-  require('../components/Home'); // eslint-disable-line global-require
+  require('../components/ToughLove'); // eslint-disable-line global-require
   require('../components/Tools'); // eslint-disable-line global-require
 }
 
@@ -435,7 +431,7 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(importHome, 'importHome', '/Users/nickrutten/Developer/cmd/icc/src/routes/index.js');
+  __REACT_HOT_LOADER__.register(importToughLove, 'importToughLove', '/Users/nickrutten/Developer/cmd/icc/src/routes/index.js');
 
   __REACT_HOT_LOADER__.register(importTools, 'importTools', '/Users/nickrutten/Developer/cmd/icc/src/routes/index.js');
 
@@ -458,7 +454,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _default = function _default(vo) {
-  return '\n\n<!DOCTYPE html>\n<html lang="en">\n\n  <head>\n    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />\n    <meta charSet=\'utf-8\' />\n    <meta httpEquiv="Content-Language" content="en" />\n    <meta name="viewport" content="width=device-width, initial-scale=1">\n\n    <link id="favicon" rel="shortcut icon" href="/kyt-favicon.png" sizes="16x16 32x32" type="image/png" />\n    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">\n    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">\n    ' + (vo.cssBundle ? '<link rel="stylesheet" type="text/css" href="' + vo.cssBundle + '">' : '') + '\n\n    <title>Universal React Starter Kyt</title>\n  </head>\n\n  <body>\n    <div id="root"><div>' + vo.root + '</div></div>\n    <script src="' + vo.jsBundle + '"></script>\n  </body>\n\n</html>\n\n';
+  return '\n\n<!DOCTYPE html>\n<html lang="en">\n\n  <head>\n    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />\n    <meta charSet=\'utf-8\' />\n    <meta httpEquiv="Content-Language" content="en" />\n    <meta name="viewport" content="width=device-width, initial-scale=1">\n\n    <link id="favicon" rel="shortcut icon" href="/kyt-favicon.png" sizes="16x16 32x32" type="image/png" />\n    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">\n    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">\n    ' + (vo.cssBundle ? '<link rel="stylesheet" type="text/css" href="' + vo.cssBundle + '">' : '') + '\n\n    <title>Tough Love for War Criminals</title>\n  </head>\n\n  <body>\n    <div id="root"><div>' + vo.root + '</div></div>\n    <script src="' + vo.jsBundle + '"></script>\n  </body>\n\n</html>\n\n';
 };
 
 /* eslint-disable prefer-template, max-len */
@@ -487,16 +483,14 @@ var _temp = function () {
 /***/ function(module, exports) {
 
 module.exports = {
-	"paragraph": "styles-paragraph--220JU"
+	"tool": "styles-tool--3Brnj"
 };
 
 /***/ },
 /* 9 */
 /***/ function(module, exports) {
 
-module.exports = {
-	"tool": "styles-tool--3Brnj"
-};
+
 
 /***/ },
 /* 10 */
@@ -542,34 +536,28 @@ module.exports = require("react-router/lib/IndexRoute");
 /* 16 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/Link");
+module.exports = require("react-router/lib/Route");
 
 /***/ },
 /* 17 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/Route");
+module.exports = require("react-router/lib/RouterContext");
 
 /***/ },
 /* 18 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/RouterContext");
+module.exports = require("react-router/lib/createMemoryHistory");
 
 /***/ },
 /* 19 */
 /***/ function(module, exports) {
 
-module.exports = require("react-router/lib/createMemoryHistory");
-
-/***/ },
-/* 20 */
-/***/ function(module, exports) {
-
 module.exports = require("react-router/lib/match");
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(1);

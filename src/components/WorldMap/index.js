@@ -4,7 +4,6 @@ import styles from './styles.scss';
 function WorldMap() {
   return (
     <section>
-
     </section>
   );
 }
