@@ -13,14 +13,21 @@
   max-height: 100vh;
   min-height: 600px;
   width: auto;
+}
+
+.WorldMapCountries {
   fill: none;
   stroke: crimson;
 }
 
-.WorldMapUserPosition {
-  fill: pink;
+.WorldMapUser {
+  circle {
+    fill: palegreen;
+  }
 }
 
-.WorldMapCountryHighlight {
-  fill: gold;
+.WorldMapWarCrimes {
+  circle {
+    fill: gold;
+  }
 }
