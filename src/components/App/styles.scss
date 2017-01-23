@@ -4,6 +4,16 @@
 // Always reimport this
 @import '../../shared-styles/variables';
 
+body {
+  font: 400 1.125em/1.4 'Fira Sans', sans-serif;
+  font-variant: common-ligatures;
+  font-feature-settings: 'kern', 'liga', 'clig';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Utopia', serif;
+}
+
 .content {
   min-height: 100vh;
   width: 100%;

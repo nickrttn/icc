@@ -1,6 +1,9 @@
+@import '../../shared-styles/variables';
+
 .WorldMapContainer {
   width: 100%;
   margin: 0 auto;
+  max-height: 100vh;
 
   @media screen and (min-width: 40em) {
     width: 80vw;
@@ -8,6 +11,8 @@
     padding: 5vh 0;
   }
 }
+
+.WorldMapContent {}
 
 .WorldMapSVG {
   max-height: 100vh;
@@ -17,7 +22,7 @@
 
 .WorldMapCountries {
   fill: none;
-  stroke: crimson;
+  stroke: $red;
 }
 
 .WorldMapUser {

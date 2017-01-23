@@ -142,6 +142,9 @@ class WorldMap extends Component {
 
     return (
       <section className={styles.WorldMapContainer}>
+        <div className={styles.WorldMapContent}>
+
+        </div>
         { geoData &&
           <svg
             className={styles.WorldMapSVG}

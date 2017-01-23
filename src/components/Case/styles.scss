@@ -1,0 +1,89 @@
+@import '../../shared-styles/variables';
+
+.case {
+  color: white;
+  width: 90vw;
+  max-height: 100vh;
+
+  margin: 0 5vw;
+  padding: 2vw 0 4vw;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.caseTitle {
+  font-size: 3.375em;
+  font-weight: bold;
+}
+
+.caseSubtitle {
+  font-family: 'Utopia', serif;
+  font-size: 2.25em;
+  max-width: 25em;
+  span {
+    color: $red;
+  }
+}
+
+.caseCountryStatsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.caseMaskedCountry {
+  flex: 1 70%;
+}
+
+.caseMask {
+  height: auto;
+  max-height: 100%;
+  z-index: 1;
+
+  mask {
+    max-height: 100%;
+    height: auto;
+
+    rect {
+      fill: rgba(255, 255, 255, 0);
+    }
+    polyline {
+      fill: rgba(255, 255, 255, 1);
+    }
+  }
+
+  image {
+    width: 120%;
+    height: auto;
+    object-fit: cover;
+    mask: url(#afghanistan);
+  }
+}
+
+.caseStats {
+  flex: 1 30%;
+  align-self: flex-end;
+  display: flex;
+  flex-flow: row wrap;
+
+  h4 {
+    font-size: 2.25em;
+    margin-bottom: .5em;
+  }
+}
+
+.caseStat {
+  flex: 1 calc(50% - 1em);
+  margin-bottom: 1em;
+
+  &:nth-of-type(odd) {
+    margin-right: 2em;
+  }
+}
+
+.caseStatNumber {
+  color: $red;
+  font-family: Utopia, serif;
+  font-size: 3.375em;
+  font-weight: bold;
+}

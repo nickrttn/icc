@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Introduction from './';
+import Landing from './';
 
 it('has a section', () => {
-  const wrapper = shallow(<Introduction />);
+  const wrapper = shallow(<Landing />);
   expect(wrapper.is('section')).toBeTruthy();
 });
