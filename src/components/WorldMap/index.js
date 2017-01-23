@@ -1,10 +1,12 @@
 /* eslint react/prefer-stateless-function:0 */
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import superagent from 'superagent';
 import { feature } from 'topojson';
 import { geoPath, geoMercator } from 'd3-geo';
 
 import styles from './styles.scss';
+
+import aleppo from './aleppo.jpg';
 
 class WorldMap extends Component {
   constructor(props) {
@@ -101,6 +103,7 @@ class WorldMap extends Component {
         const lonLat = [position.coords.longitude, position.coords.latitude];
         // great, we have geolocation, save to state
         this.setState({ userLocation: projection(lonLat) });
+        this.props.setClosestCase('afghanistan');
       });
     }
   }
@@ -142,44 +145,52 @@ class WorldMap extends Component {
 
     return (
       <section className={styles.WorldMapContainer}>
+        <header className={styles.WorldMapHeader}>
+          <h2><span>9</span> war crimes <span>75,000</span> victims</h2>
+          <p>The crimes on the map have been committed between 2004 and now. Start exploring the map and find out which crimes are being investigated by the International Criminal Court.</p>
+        </header>
         <div className={styles.WorldMapContent}>
+          { geoData &&
+            <svg
+              className={styles.WorldMapSVG}
+              viewBox="0 0 961 620" preserveAspectRatio="xMidYMin slice"
+              ref={(svg) => { this.SVG = svg; }}
+            >
+              <defs>
+                <mask id="worldmap" maskUnits="userSpaceOnUse" className={styles.WorldMapCountries}>
+                  { this.renderFeatureCollection() }
+                </mask>
+              </defs>
 
-        </div>
-        { geoData &&
-          <svg
-            className={styles.WorldMapSVG}
-            viewBox="0 0 961 620" preserveAspectRatio="xMidYMin slice"
-            ref={(svg) => { this.SVG = svg; }}
-          >
-            <g className={styles.WorldMapCountries}>
-              { this.renderFeatureCollection() }
-            </g>
+              <image xlinkHref={aleppo} className={styles.WorldMapImage} />
 
-            { this.state.userLocation &&
-              <g className={styles.WorldMapUser}>
-                <circle
-                  ref={(ref) => { this.User = ref; }} r="3"
-                  cx={this.state.userLocation[0]}
-                  cy={this.state.userLocation[1]}
-                />
+              { this.state.userLocation &&
+                <g className={styles.WorldMapUser}>
+                  <circle
+                    ref={(ref) => { this.User = ref; }} r="3"
+                    cx={this.state.userLocation[0]}
+                    cy={this.state.userLocation[1]}
+                  />
+                </g>
+              }
+
+              <g ref={(ref) => { this.WarCrimes = ref; }} className={styles.WorldMapWarCrimes}>
+                { this.filterGeoData().map(country =>
+                  <g id={country.name} key={country.name} className={styles.WorldMapWarCrime} transform={`translate(${country.center[0] - 11} ${country.center[1] - 30})`}>
+                    <path d="M10.75 0A10.719 10.719 0 0 0 .018 10.732c0 2.07.661 4.047 1.581 5.671l6.994 12.105c.439.79 1.323 1.186 2.157 1.186.834 0 1.674-.396 2.156-1.186L19.9 16.41c.927-1.624 1.581-3.565 1.581-5.671C21.481 4.802 16.687 0 10.75 0zm0 13.902a3.927 3.927 0 0 1-3.918-3.918 3.927 3.927 0 0 1 3.918-3.917 3.927 3.927 0 0 1 3.917 3.917 3.922 3.922 0 0 1-3.917 3.918z" fill="#FFF"/><ellipse stroke="#9D0000" fill="#9D0000" cx="10.814" cy="10.116" rx="3.837" ry="3.837"/>
+                  </g>
+                )}
               </g>
-            }
-
-            <g ref={(ref) => { this.WarCrimes = ref; }} className={styles.WorldMapWarCrimes}>
-              { this.filterGeoData().map(country =>
-                <circle
-                  key={country.name}
-                  r="3" fill="blue" stroke="none"
-                  cx={`${country.center[0]}`}
-                  cy={`${country.center[1]}`}
-                />
-              )}
-            </g>
-          </svg>
-        }
+            </svg>
+          }
+        </div>
       </section>
     );
   }
 }
+
+WorldMap.propTypes = {
+  setClosestCase: PropTypes.func.isRequired,
+};
 
 export default WorldMap;

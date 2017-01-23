@@ -1,28 +1,60 @@
 @import '../../shared-styles/variables';
 
 .WorldMapContainer {
+  display: flex;
+  flex-flow: column nowrap;
   width: 100%;
   margin: 0 auto;
-  max-height: 100vh;
+  min-height: 100vh;
+  position: relative;
 
   @media screen and (min-width: 40em) {
-    width: 80vw;
-    margin: 0 auto;
-    padding: 5vh 0;
+      width: 90vw;
+      margin: 0 5vw;
+      padding: 2vw 0 4vw;
   }
 }
 
-.WorldMapContent {}
+.WorldMapHeader {
+  color: white;
+  z-index: 1;
+
+  h2 {
+    margin-bottom: 0.25em;
+    font-weight: bold;
+
+    span {
+      color: $red;
+    }
+  }
+
+  p {
+    max-width: 35em;
+  }
+}
+
+.WorldMapContent {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  left: 0;
+  top: 5vw;
+}
 
 .WorldMapSVG {
-  max-height: 100vh;
-  min-height: 600px;
+  flex: 0 80%;
+  height: 100%;
   width: auto;
 }
 
 .WorldMapCountries {
-  fill: none;
-  stroke: $red;
+  fill: rgba(255, 255, 255, 0.60);
+}
+
+.WorldMapImage {
+  mask: url(#worldmap);
 }
 
 .WorldMapUser {
@@ -31,8 +63,30 @@
   }
 }
 
-.WorldMapWarCrimes {
-  circle {
-    fill: gold;
+.WorldMapWarCrime {}
+
+.WorldMapStats {
+  flex: 1 20%;
+  align-self: flex-end;
+
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.WorldMapStat {
+  flex: 1 calc(50% - 1em);
+  margin-bottom: 1em;
+  color: white;
+
+  &:nth-of-type(odd) {
+    margin-right: 2em;
   }
+}
+
+.WorldMapStatNumber {
+  color: $red;
+  font-family: Utopia, serif;
+  font-size: 3.375em;
+  font-weight: bold;
+  margin-bottom: 0;
 }
