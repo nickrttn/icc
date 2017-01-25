@@ -90,3 +90,21 @@
   font-weight: bold;
   margin-bottom: 0;
 }
+
+:global(.closest) {
+  animation: attention 1.5s ease infinite;
+}
+
+@keyframes attention {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
