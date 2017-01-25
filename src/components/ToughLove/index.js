@@ -2,14 +2,16 @@ import React from 'react';
 import styles from './styles.scss';
 
 // Components
-import WorldMap from '../WorldMap';
-import Introduction from '../Introduction';
+import Landing from '../Landing';
+import MapCase from '../MapCase';
+import WarCrimes from '../WarCrimes';
 
 function ToughLove() {
   return (
     <article className={styles.content}>
-      <Introduction />
-      <WorldMap />
+      <Landing />
+      <MapCase />
+      <WarCrimes />
     </article>
   );
 }

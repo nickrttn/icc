@@ -1,0 +1,132 @@
+@import '../../shared-styles/variables';
+
+.case {
+  color: white;
+  width: 90vw;
+  margin: 0 5vw;
+  padding: 2vw 0 4vw;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.caseTitle {
+  font-size: 3.375em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.caseSubtitle {
+  font-family: 'Utopia', serif;
+  font-size: 2.25em;
+  max-width: 25em;
+  margin-bottom: 0;
+
+  span {
+    color: $red;
+  }
+}
+
+.caseCountryStatsContainer {
+  display: flex;
+  justify-content: space-between;
+  max-height: 75vh;
+}
+
+.caseMaskedCountry {
+  flex: 1 70%;
+}
+
+.caseMask {
+  height: auto;
+  max-height: 100%;
+  z-index: 1;
+
+  mask {
+    max-height: 100%;
+    height: auto;
+
+    rect {
+      fill: rgba(255, 255, 255, 0);
+    }
+    polyline {
+      fill: rgba(255, 255, 255, 1);
+    }
+  }
+
+  image {
+    width: 120%;
+    height: auto;
+    object-fit: cover;
+    mask: url(#afghanistan);
+  }
+}
+
+.caseStats {
+  flex: 1 30%;
+  align-self: flex-end;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  h4 {
+    font-size: 2.25em;
+    margin-bottom: .5em;
+  }
+}
+
+.caseStat {
+  flex: 1 calc(50% - 1em);
+  margin-bottom: 1em;
+
+  &:nth-of-type(odd) {
+    margin-right: 2em;
+  }
+}
+
+.caseStatNumber {
+  color: $red;
+  font-family: Utopia, serif;
+  font-size: 3.375em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.caseBackground {
+  display: flex;
+  align-items: baseline;
+  padding: 5vw 0 0;
+
+  p {
+    max-width: 35em;
+  }
+
+  h5 {
+    margin-bottom: 1.5em;
+  }
+}
+
+.caseBackgroundLeft, .caseBackgroundRight {
+  flex: 1 50%;
+}
+
+.caseBackgroundCrimes {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.caseBackgroundCrime {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-right: 2em;
+  flex: 0 15%;
+  text-align: center;
+
+  img {
+    height: 5em;
+    width: auto;
+    margin-bottom: 1.5em;
+  }
+}

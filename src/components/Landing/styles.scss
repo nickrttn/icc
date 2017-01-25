@@ -1,6 +1,6 @@
 @import '../../shared-styles/variables';
 
-.introduction {
+.landing {
   height: 100vh;
   position: relative;
   width: 100%;
@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-.introductionMask {
+.landingMask {
   width: auto;
   height: 100%;
   z-index: 2;
@@ -26,17 +26,17 @@
     mask: url(#mask);
   }
 
-  .introductionMaskText {
+  .landingMaskText {
     transform-origin: center;
     transform: scale(0.7);
   }
 }
 
-.introductionVideo {
+.landingVideo {
   overflow: hidden;
 }
 
-.introductionVideo video {
+.landingVideo video {
   position: absolute;
   top: 0%;
   left: 50%;
