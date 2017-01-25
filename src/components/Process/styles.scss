@@ -6,6 +6,7 @@
   padding: 2vw 0 4vw;
   display: flex;
   flex-flow: row wrap;
+  background-color: $darkGrey;
 
   h2 {
     margin-bottom: 0;
@@ -14,6 +15,7 @@
 
 .ProcessHeader {
   flex: 0 100%;
+  margin-bottom: 5vw;
 }
 
 .ProcessHeaderDescription {
@@ -22,4 +24,8 @@
   span {
     color: $red;
   }
+}
+
+.ProcessSteps {
+  flex: 1 90%;
 }
