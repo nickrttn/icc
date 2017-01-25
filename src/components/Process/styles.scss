@@ -20,6 +20,7 @@
 
 .ProcessHeaderDescription {
   font-size: 2em;
+  font-family: 'Utopia', serif;
 
   span {
     color: $red;
@@ -28,4 +29,57 @@
 
 .ProcessSteps {
   flex: 1 90%;
+}
+
+.ProcessChoices {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProcessChoice {
+  display: flex;
+  justify-content: space-between;
+  appearance: none;
+  background: none;
+  border: none;
+  text-align: left;
+
+  p:first-of-type {
+    color: white;
+  }
+
+  p:last-of-type {
+    color: $lightGrey;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active, &:focus {
+    outline: 0;
+  }
+}
+
+.ProcessChoiceBox {
+  width: 3em;
+  height: 3em;
+  border: 2px solid $lightGrey;
+  margin-right: 2em;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    border: 2px solid $lightGrey;
+    top: 2px; left: 2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+  }
+}
+
+.ProcessChoiceActive {
+  .ProcessChoiceBox {
+    background: $lightGrey;
+  }
 }

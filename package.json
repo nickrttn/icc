@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/nickrttn/icc#readme",
   "dependencies": {
+    "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "d3-geo": "^1.4.0",
     "enzyme": "^2.4.1",
