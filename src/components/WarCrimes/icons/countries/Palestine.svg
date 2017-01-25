@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="30px" height="61px" viewBox="0 0 30 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>Palestine</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Palestine" stroke-width="2" stroke="#9B9B9B">
-            <polygon id="Shape" points="27.6654084 8.65914631 27.6654084 38.0884533 21.3800023 52.5246324 2 59.1086322 3.57135154 46.3433839 14.0470284 39.7406576 4.09513538 34.3687572 12.4756769 2"></polygon>
-        </g>
-    </g>
-</svg>
+<svg width="30" height="61" viewBox="0 0 30 61" xmlns="http://www.w3.org/2000/svg"><title>Palestine</title><path d="M27.665 8.66v29.428L21.38 52.525 2 59.109l1.571-12.766 10.476-6.602-9.952-5.372L12.475 2z" stroke-width="2" stroke="#9B9B9B" fill="none" fill-rule="evenodd"/></svg>
