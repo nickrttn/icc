@@ -9,13 +9,21 @@ import styles from './styles.scss';
 import aleppo from './aleppo.jpg';
 import location from './location.svg';
 
+import geoData from './geo-countries.json';
+
 class WorldMap extends Component {
   constructor(props) {
     super(props);
+
     // initialize an empty state so we can keep render clean(er)
     this.state = {
       userLocation: false,
     };
+
+    this.getProjection = this.getProjection.bind(this);
+    this.fetchFeatureCollection = this.fetchFeatureCollection.bind(this);
+    this.filterFeatureCollection = this.filterFeatureCollection.bind(this);
+    this.renderFeatureCollection = this.renderFeatureCollection.bind(this);
 
     this.countriesWarCrimes = [
       'Afghanistan',
@@ -30,18 +38,16 @@ class WorldMap extends Component {
     ];
   }
 
-  fetchGeodata() {
-    return superagent('get', 'data/geo-countries.json')
-      .then(result => JSON.parse(result.text))
-      .then(geoData => this.getFeatureCollection(geoData))
-      .then(geoData => this.setState({ geoData }));
+  fetchFeatureCollection() {
+    const featureCollection = this.getFeatureCollection(geoData);
+    this.setState({featureCollection});
   }
 
   getProjection() {
-    const projection = geoMercator()
-      .fitExtent([[20, 20], [961, 620]], this.state.geoData)
-      .rotate([-11, 0, 0]);
+    // Get the projection function from the path
+    const projection = this.path.projection();
 
+    // Return the required values
     return {
       scale: projection.scale(),
       translate: projection.translate(),
@@ -51,36 +57,44 @@ class WorldMap extends Component {
 
   getPath() {
     const projection = geoMercator()
-      .fitExtent([[20, 20], [961, 620]], this.state.geoData)
+      .fitExtent([[20, 20], [961, 620]], this.state.featureCollection)
       .rotate([-11, 0, 0]);
-    const path = geoPath(projection);
-    return path;
+
+    this.path = geoPath(projection);
   }
 
   getFeatureCollection(geoData) {
+    // Convert the TopoJSON to a GeoJSON FeatureCollection
     const featureCollection = feature(geoData, geoData.objects.geoCountries);
+
+    // Only include the Features that actually do have a geometry (some were removed in simplification)
     featureCollection.features = featureCollection.features.filter(country => country.geometry);
+
     return featureCollection;
   }
 
   renderFeatureCollection() {
-    const path = this.getPath();
-    const features = this.state.geoData.features.map(country => (
-      <path key={country.properties.ADMIN} d={path(country)} />
+    const { featureCollection } = this.state;
+
+    // Render a collection of svg paths from the FeatureCollection
+    const features = featureCollection.features.map(country => (
+      <path key={country.properties.ADMIN} d={this.path(country)} />
     ));
 
     return features;
   }
 
-  filterGeoData() {
-    const path = this.getPath();
+  filterFeatureCollection() {
+    const { featureCollection } = this.state;
+    const path = this.path;
 
-    // Filter the GeoJSON by countries war crimes have been committed in
-    const filteredFeatures = this.state.geoData.features.filter((country) => {
+    // Filter GeoJSON Features by countries war crimes have been committed in
+    const filteredFeatures = featureCollection.features.filter((country) => {
       const countryName = country.properties.ADMIN;
       return this.countriesWarCrimes.includes(countryName);
     });
 
+    // Map the centers of those countries to an array that includes the country name
     const pathCenters = filteredFeatures.map(country => ({
       name: country.properties.ADMIN,
       center: path.centroid(country),
@@ -90,12 +104,7 @@ class WorldMap extends Component {
   }
 
   requestUserLocation() {
-    const { scale, rotation, translate } = this.getProjection();
-
-    const projection = geoMercator();
-    projection.scale(scale);
-    projection.rotate(rotation);
-    projection.translate(translate);
+    const projection = this.path.projection()
 
     if (navigator && 'geolocation' in navigator) {
       // geolocation is available
@@ -104,26 +113,18 @@ class WorldMap extends Component {
         // great, we have geolocation, save to state
         this.setState({ userLocation: projection(lonLat) });
         this.props.setClosestCase('afghanistan');
+        this.calculateDistanceToUser();
       });
     }
   }
 
-  componentDidMount() {
-    // fetch the data needed to render countries
-    this.fetchGeodata();
-  }
-
-  componentDidUpdate() {
-    this.requestUserLocation();
-
+  calculateDistanceToUser() {
     const user = this.User;
     const warCrimes = Array.from(this.WarCrimes.children);
 
     if (user && warCrimes) {
       const userX = user.transform.baseVal[0].matrix.e;
       const userY = user.transform.baseVal[0].matrix.f;
-
-      console.dir(user);
 
       warCrimes.forEach((crime) => {
         const crimeX = crime.x.baseVal.value;
@@ -144,8 +145,20 @@ class WorldMap extends Component {
     }
   }
 
+  componentWillMount() {
+    // fetch the data needed to render countries
+    this.fetchFeatureCollection();
+  }
+
+  componentDidMount() {
+    this.requestUserLocation();
+  }
+
   render() {
-    const { geoData, userLocation } = this.state;
+    const { featureCollection, userLocation } = this.state;
+
+    // Set the required d3-geoPath function to this.path so all functions can access it
+    this.getPath();
 
     return (
       <section className={styles.WorldMapContainer}>
@@ -154,7 +167,7 @@ class WorldMap extends Component {
           <p>The crimes on the map have been committed between 2004 and now. Start exploring the map and find out which crimes are being investigated by the International Criminal Court.</p>
         </header>
         <div className={styles.WorldMapContent}>
-          { geoData &&
+          { featureCollection &&
             <svg
               className={styles.WorldMapSVG}
               viewBox="0 0 961 620" preserveAspectRatio="xMidYMin slice"
@@ -183,8 +196,8 @@ class WorldMap extends Component {
               }
 
               <g ref={(ref) => { this.WarCrimes = ref; }} className={styles.WorldMapWarCrimes}>
-                { this.filterGeoData().map(country =>
-                  <image
+                { this.filterFeatureCollection().map(country =>
+                  <image // Even though this looks a little nasty, it's just an svg included as an image
                     xlinkHref={location}
                     x={country.center[0] - 11}
                     y={country.center[1] - 30}
@@ -201,9 +214,5 @@ class WorldMap extends Component {
     );
   }
 }
-
-WorldMap.propTypes = {
-  setClosestCase: PropTypes.func.isRequired,
-};
 
 export default WorldMap;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Landing from './';
+import Case from './';
 
-it('has a section', () => {
-  const wrapper = shallow(<Landing />);
-  expect(wrapper.is('section')).toBeTruthy();
+it('has an article', () => {
+  const wrapper = shallow(<Case case='afghanistan' />);
+  expect(wrapper.is('article')).toBeTruthy();
 });

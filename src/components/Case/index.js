@@ -9,7 +9,7 @@ function Case(props) {
   switch (props.case) {
     case 'afghanistan':
       return (
-        <section className={styles.case}>
+        <article className={styles.case}>
           <header>
             <h2 className={styles.caseTitle}>Afghanistan</h2>
             <p className={styles.caseSubtitle}><span>Members of</span> the Taliban & affiliated groups, Afghan authorities, US forces or CIA and anti-government groups</p> { /* eslint-disable-rule max-len */ }
@@ -75,7 +75,7 @@ function Case(props) {
               <p>Hier komt een video</p>
             </div>
           </div>
-        </section>
+        </article>
       );
     default:
       return (
