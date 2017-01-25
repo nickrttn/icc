@@ -4,17 +4,30 @@
 
   @media screen and (min-width: 40em) {
     width: 80vw;
-    margin: 5vh auto;
+    margin: 0 auto;
+    padding: 5vh 0;
   }
 }
 
-.WorldMap {
+.WorldMapSVG {
   max-height: 100vh;
   min-height: 600px;
-  fill: none;
-  stroke: red;
+  width: auto;
 }
 
-.WorldMapUserPosition {
-  fill: lightgreen;
+.WorldMapCountries {
+  fill: none;
+  stroke: crimson;
+}
+
+.WorldMapUser {
+  circle {
+    fill: palegreen;
+  }
+}
+
+.WorldMapWarCrimes {
+  circle {
+    fill: gold;
+  }
 }
