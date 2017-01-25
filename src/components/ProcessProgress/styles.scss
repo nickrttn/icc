@@ -1,0 +1,9 @@
+.ProcessProgress {
+  flex: 1 10%;
+
+  progress {
+    width: 100%;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+  }
+}

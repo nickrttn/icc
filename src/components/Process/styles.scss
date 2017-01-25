@@ -1,0 +1,25 @@
+@import '../../shared-styles/variables';
+
+.Process {
+  margin: 0 5vw;
+  width: 90vw;
+  padding: 2vw 0 4vw;
+  display: flex;
+  flex-flow: row wrap;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.ProcessHeader {
+  flex: 0 100%;
+}
+
+.ProcessHeaderDescription {
+  font-size: 2em;
+
+  span {
+    color: $red;
+  }
+}
