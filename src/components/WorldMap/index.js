@@ -1,6 +1,5 @@
 /* eslint react/prefer-stateless-function:0 */
 import React, { Component, PropTypes } from 'react';
-import superagent from 'superagent';
 import { feature } from 'topojson';
 import { geoPath, geoMercator } from 'd3-geo';
 
@@ -213,6 +212,10 @@ class WorldMap extends Component {
       </section>
     );
   }
+}
+
+WorldMap.propTypes = {
+  setClosestCase: PropTypes.func.isRequired,
 }
 
 export default WorldMap;
