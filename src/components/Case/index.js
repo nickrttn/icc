@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Element } from 'react-scroll';
-import Counter from 'lyef-counter';
 
 import styles from './styles.scss';
 
