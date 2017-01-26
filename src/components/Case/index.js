@@ -1,4 +1,7 @@
 import React, { PropTypes } from 'react';
+import { Element } from 'react-scroll';
+import Counter from 'lyef-counter';
+
 import styles from './styles.scss';
 
 import afghanistan from './afghanistan.jpg';
@@ -7,8 +10,15 @@ import torture from './icons/torture.svg';
 
 function Case(props) {
   switch (props.case) {
-    case 'afghanistan':
+    default:
       return (
+        <article className={styles.defaultCase}>
+          <h2>Choose a war crime from the map</h2>
+        </article>
+      );
+    case 'Afghanistan':
+      return (
+        <Element name="selectedCase">
         <article className={styles.case}>
           <header>
             <h2 className={styles.caseTitle}>Afghanistan</h2>
@@ -51,7 +61,7 @@ function Case(props) {
               <h4 className={styles.caseBackgroundTitle}>Background</h4>
               <p>Afghanistan’s war is fueled by support from within Pakistan for Taliban insurgents, and by poor governance within Afghanistan, including entrenched patronage systems and corruption, and a weak rule of law. The withdrawal of international combat troops between 2011 and 2014 left a fragile security environment and a struggling national economy.</p>
               <p>Since the disputed 2014 presidential election, friction between the two halves of the “National Unity Government” has prevented the government from implementing widely supported reforms, notably against corruption. This has deepened public discontent and questions over the government’s legitimacy.</p>
-              <p className={styles.caseBackgroundSource}>Source: http://www.usip.org/publications/the-current-situation-in-afghanistan</p>
+              {/* <p className={styles.caseBackgroundSource}>Source: http://www.usip.org/publications/the-current-situation-in-afghanistan</p> */}
               <h4>Crimes by</h4>
               <div className={styles.caseBackgroundCrimes}>
                 <div className={styles.caseBackgroundCrime}>
@@ -76,10 +86,7 @@ function Case(props) {
             </div>
           </div>
         </article>
-      );
-    default:
-      return (
-        <p>hoi</p>
+        </Element>
       );
   }
 }
