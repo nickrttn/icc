@@ -4,6 +4,7 @@ import styles from './styles.scss';
 // Components
 import Landing from '../Landing';
 import MapCase from '../MapCase';
+import Process from '../Process';
 import WarCrimes from '../WarCrimes';
 
 function ToughLove() {
@@ -12,6 +13,7 @@ function ToughLove() {
       <Landing />
       <MapCase />
       <WarCrimes />
+      <Process />
     </article>
   );
 }

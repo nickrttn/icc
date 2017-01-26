@@ -1,0 +1,34 @@
+@import '../../shared-styles/variables';
+
+.ProcessStep {
+  margin: 20vh 0;
+  padding-right: 3vw;
+
+  h3 {
+    transition: all 250ms ease-in-out;
+  }
+
+  &:first-of-type {
+    margin-top: 10vh;
+  }
+
+  ol {
+    list-style-type: upper-roman;
+    padding-left: 1.5em;
+
+    li {
+      color: $red;
+      padding-left: 1.5em;
+
+      p {
+        color: white;
+      }
+    }
+  }
+}
+
+:global(.step-active) {
+  h3 {
+    color: $red;
+  }
+}

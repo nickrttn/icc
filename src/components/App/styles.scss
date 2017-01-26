@@ -12,9 +12,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Utopia', serif;
+  font-family: 'utopia-std', serif;
   font-weight: normal;
-  margin-bottom: 1.5em;
+  margin-bottom: .5em;
   line-height: 1.2;
 }
 
@@ -33,6 +33,7 @@ h3 {
 
 h2 {
   font-size: 3.375em;
+  font-weight: bold;
 }
 
 h1 {
