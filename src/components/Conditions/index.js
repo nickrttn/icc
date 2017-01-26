@@ -12,7 +12,7 @@ function Conditions() {
 
       <Tabs>
         <TabList>
-          <Tab className={styles.button}>Commited in a country that signed the Rome Statute</Tab>
+          <Tab className={styles.button}>Committed in a country that signed the Rome Statute</Tab>
           <Tab className={styles.button}>Committed by a person, born in a country that signed Rome Statute</Tab>
           <Tab className={styles.button}>Referred to ICC by UN Security Council</Tab>
           <Tab className={styles.button}>Referred to ICC by individual</Tab>
@@ -20,12 +20,12 @@ function Conditions() {
 
         <TabPanel className={styles.ConditionsTab}>
           <p>The crime has to have been committed from 2002 onward in a country that has signed and approved the Rome Statute. The country is required to have made attempts to try the criminal itself.</p>
-          <h4>Commitment to Rome Satute</h4>
+          <h4>Commitment to Rome Statute</h4>
         </TabPanel>
 
         <TabPanel className={styles.ConditionsTab}>
           <p>If the country in which the crime has taken place has not approved the Rome Statute, but the criminal was born in a country that has, the criminal can still be tried.</p>
-          <h4>Commitment to Rome Satute</h4>
+          <h4>Commitment to Rome Statute</h4>
         </TabPanel>
 
         <TabPanel className={styles.ConditionsTab}>
@@ -35,7 +35,7 @@ function Conditions() {
 
         <TabPanel className={styles.ConditionsTab}>
           <p>As an individual you can submit evidence for existing and non-existing cases.</p>
-          <h4>Commitment to Rome Satute</h4>
+          <h4>Commitment to Rome Statute</h4>
         </TabPanel>
 
       </Tabs>
