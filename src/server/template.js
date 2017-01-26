@@ -23,6 +23,8 @@ export default vo => `
   <body>
     <div id="root"><div>${vo.root}</div></div>
     <script src="${vo.jsBundle}"></script>
+    <script src="https://use.typekit.net/cuu0yoa.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </body>
 
 </html>

@@ -1,0 +1,21 @@
+@import '../../shared-styles/variables';
+
+.ProcessProgress {
+  flex: 0 10%;
+  display: flex;
+  justify-content: center;
+
+  progress {
+    width: 100%;
+    transform: rotate(90deg);
+    transform-origin: left center;
+    margin: 0 auto;
+  }
+}
+
+.ProgressBar {
+  width: 3px;
+  height: 100%;
+  border-right: 2px dashed $lightGrey;
+  transition: all 60ms ease;
+}

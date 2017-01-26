@@ -1,0 +1,126 @@
+@import '../../shared-styles/variables';
+
+.Process {
+  margin: 0 5vw;
+  width: 90vw;
+  padding: 2vw 0 4vw;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: $darkGrey;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    transition: all 250ms ease-in-out;
+  }
+}
+
+.ProcessHeader {
+  flex: 0 100%;
+  margin-bottom: 5vw;
+}
+
+.ProcessHeaderDescription {
+  font-size: 2em;
+  font-family: 'utopia-std', serif;
+
+  span {
+    color: $red;
+  }
+}
+
+.ProcessStart {
+  flex: 1 90%;
+}
+
+.ProcessFirstStep {
+  margin: 0 0 5vw;
+}
+
+.ProcessChoices {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProcessChoice {
+  display: flex;
+  justify-content: space-between;
+  appearance: none;
+  background: none;
+  border: none;
+  text-align: left;
+
+  p:first-of-type {
+    color: white;
+  }
+
+  p:last-of-type {
+    color: $lightGrey;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active, &:focus {
+    outline: 0;
+  }
+}
+
+.ProcessChoiceBox {
+  width: 3em;
+  height: 3em;
+  border: 2px solid $lightGrey;
+  margin-right: 2em;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    border: 2px solid $lightGrey;
+    top: 2px; left: 2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+  }
+}
+
+.ProcessChoiceActive {
+  .ProcessChoiceBox {
+    background: $lightGrey;
+  }
+}
+
+.ProcessContinuation {
+  flex: 1 90%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.ProcessSteps {
+  flex: 0 70%;
+}
+
+.ProcessMarker {
+  color: $lightGrey;
+  font-size: 2em;
+  font-family: 'utopia-std', serif;
+  margin-bottom: 0;
+  margin-left: -10%;
+  padding: .25em 0;
+  background-color: $darkGrey;
+}
+
+.ProcessMarkerSub {
+  color: $lightGrey;
+  margin-left: -10%;
+  margin-top: 0;
+  padding: .25em 0 1em;
+  background-color: $darkGrey;
+
+  span {
+    color: $red;
+  }
+}
