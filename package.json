@@ -33,9 +33,11 @@
     "express": "^4.14.0",
     "kyt": "^0.3.0",
     "react": "^15.3.0",
+    "react-addons-css-transition-group": "^15.4.2",
     "react-addons-test-utils": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-router": "^2.6.1",
+    "react-scroll": "^1.4.5",
     "react-tabs": "^0.8.2",
     "topojson": "^2.2.0"
   },
