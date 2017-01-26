@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import styles from './styles.scss';
 
 function ProcessStep(props) {
-
   return (
     <div className={styles.ProcessStep}>
       {props.children}

@@ -27,8 +27,12 @@
   }
 }
 
-.ProcessSteps {
+.ProcessStart {
   flex: 1 90%;
+}
+
+.ProcessFirstStep {
+  margin: 0 0 5vw;
 }
 
 .ProcessChoices {
@@ -81,5 +85,36 @@
 .ProcessChoiceActive {
   .ProcessChoiceBox {
     background: $lightGrey;
+  }
+}
+
+.ProcessContinuation {
+  flex: 1 90%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.ProcessSteps {
+  flex: 1;
+}
+
+.ProcessCommunications {
+  flex: 1;
+}
+
+.ProcessMarker {
+  color: $lightGrey;
+  font-size: 2em;
+  font-family: 'Utopia', serif;
+  margin-bottom: 0;
+  margin-left: -10%;
+}
+
+.ProcessMarkerSub {
+  color: $lightGrey;
+  margin-left: -10%;
+
+  span {
+    color: $red;
   }
 }

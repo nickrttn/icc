@@ -1,9 +1,10 @@
 .ProcessProgress {
-  flex: 1 10%;
+  flex: 0 10%;
 
   progress {
     width: 100%;
     transform: rotate(90deg);
-    transform-origin: 0 0;
+    transform-origin: left center;
+    margin: 0 auto;
   }
 }

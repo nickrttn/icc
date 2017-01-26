@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Sticky from 'react-stickynode';
 import classNames from 'classnames/bind';
 import styles from './styles.scss';
 
@@ -41,7 +42,7 @@ class Process extends Component {
 
         <ProcessProgress />
 
-        <main className={styles.ProcessSteps}>
+        <main className={styles.ProcessStart}>
           <div className={styles.ProcessFirstStep}>
             <h3>Choose your path</h3>
 
@@ -68,21 +69,78 @@ class Process extends Component {
             </div>
           </div>
 
-          { this.state.process === 'individual' &&
-            <ProcessStep>
-              <p>get crackin'</p>
-            </ProcessStep>
-          }
-          { this.state.process === 'country' &&
-            <ProcessStep>
-              <p>bitches</p>
-            </ProcessStep>
-          }
-          { !this.state.process &&
-            <div className={styles.ProcessNoChoice}>
-              <p>Decide what to do you shall, my padawan.</p>
-            </div>
-          }
+          <div className={styles.ProcessContinuation} id="process-continuation">
+            { this.state.process === 'individual' &&
+              <div className={styles.ProcessSteps}>
+                <ProcessStep>
+                  <h3 id="process-start">The process begins</h3>
+                  <p>The Office of the Prosecutor, an internal division of the ICC, will examine all information as it is received, and see if the communications adhere to their standards.</p>
+                  <ol>
+                    <li><p>Does the evidence provide a credible basis for further investigation?</p></li>
+                    <li><p>Is the evidence admissible before the Court, in light of the requirements relating to gravity and complementarity with national proceedings?</p></li>
+                  </ol>
+                  <p>The OTP must give consideration to the interests of justice.</p>
+                </ProcessStep>
+
+                <ProcessStep>
+                  <h3>Information review</h3>
+                  <p>To acquire permission for the start of an investigation, the Office of the Prosecutor submits a request to the Pre-Trial.</p>
+                  <ol>
+                    <li><p>Must be consistent with the object and purpose of the Rome Statute and its context.</p></li>
+                    <li><p>Considers the requirements of international law to prosecute only the most serious crimes.</p></li>
+                    <li><p>Justice is a precondition for meaningful peace. Meaning that the investigation should not disrupt the peace.</p></li>
+                  </ol>
+                </ProcessStep>
+
+                <ProcessStep>
+                  <h3>Start of the investigation</h3>
+                  <p>The Office of The Prosecutor requests co-operation and help from other nations and international organisations. Investigators are sent to the locations where crimes were committed.</p>
+                  <p>When the OTP has gathered enough evidence against a war criminal, it submits a request for arrest or summons to the pre-trial judges. The pre-trial phase of the process officially begins.</p>
+                </ProcessStep>
+
+                <p className={styles.ProcessMarker}>Pre-trial phase</p>
+                <p className={styles.ProcessMarkerSub}><span>Your</span> job here is done. From here on out you have no influence on the proceedings.</p>
+
+                <ProcessStep>
+                  <h3>Start of pre-trial</h3>
+                  <p>If the reasons for requesting the arrest or summons of an individual are sufficiently grounded, the pre-trial judges will issue an arrest warrant and a states party will arrest the criminal. The criminal will subsequently appear in court.</p>
+                  <p>During the first initial appearance hearing, the pre-trial judges confirm the identity of the suspects and declare the charges of which the criminal is being accused. Practical matters such as the spoken language of the court are also established. During the second initial appearance hearing, the charges are confirmed and the victims are heard.</p>
+                  <p>If the judges decide there is enough evidence against the criminal, the judges will summon the criminal to trial.</p>
+                </ProcessStep>
+
+                <p className={styles.ProcessMarker}>Trial phase</p>
+
+                <ProcessStep>
+                  <h3>Start of trial</h3>
+                  <p>When the Trial starts, accusations are checked and the suspect is asked to confirm the information of the victims. After every prosecutor, including the Prosecution, Defence and the victims, is heard, the verdict follows in which the criminal is found to be either guilty or not guilty. The maximum sentence is 30 years. Only in extreme cases, life imprisonment can be demanded. Afterwards, the criminal has the right to appeal.</p>
+                </ProcessStep>
+
+                <p className={styles.ProcessMarker}>Appeals</p>
+
+                <ProcessStep>
+                  <h3>Start of appeals</h3>
+                  <p>Both the Prosecutor and the Defence can appeal. The judges who adjudicate in appeal are always different from the judges during the Trial.</p>
+                </ProcessStep>
+              </div>
+            }
+            { this.state.process === 'country' &&
+              <div className={styles.ProcessSteps}>
+                <ProcessStep>
+                  <p>bitches</p>
+                </ProcessStep>
+              </div>
+            }
+            { !this.state.process &&
+              <div className={styles.ProcessNoChoice}>
+                <p>Decide what to do you shall, my padawan.</p>
+              </div>
+            }
+
+            <Sticky top='#process-start' bottom="#process-continuation" className={styles.ProcessCommunications}>
+              <p>The communications bar chart goes here.</p>
+            </Sticky>
+
+          </div>
         </main>
       </section>
     );
