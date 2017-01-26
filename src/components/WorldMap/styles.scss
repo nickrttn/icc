@@ -92,7 +92,7 @@
 }
 
 :global(.closest) {
-  animation: attention 1.5s ease infinite;
+  animation: attention 1.5s ease infinite paused;
 }
 
 @keyframes attention {
