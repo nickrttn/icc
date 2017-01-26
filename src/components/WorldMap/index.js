@@ -1,11 +1,14 @@
 /* eslint react/prefer-stateless-function:0 */
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link, Element, Events, animateScroll, scrollSpy } from 'react-scroll';
+
 import { feature } from 'topojson';
 import { geoPath, geoMercator } from 'd3-geo';
 
 import styles from './styles.scss';
 
-import aleppo from './aleppo.jpg';
+import aleppo from './aleppo3.jpg';
 import location from './location.svg';
 
 import geoData from './geo-countries.json';
@@ -56,7 +59,7 @@ class WorldMap extends Component {
 
   getPath() {
     const projection = geoMercator()
-      .fitExtent([[20, 20], [961, 620]], this.state.featureCollection)
+      .fitExtent([[20, 20], [941, 600]], this.state.featureCollection)
       .rotate([-11, 0, 0]);
 
     this.path = geoPath(projection);
@@ -111,7 +114,6 @@ class WorldMap extends Component {
         const lonLat = [position.coords.longitude, position.coords.latitude];
         // great, we have geolocation, save to state
         this.setState({ userLocation: projection(lonLat) });
-        this.props.setClosestCase('afghanistan');
         this.calculateDistanceToUser();
       });
     }
@@ -139,9 +141,32 @@ class WorldMap extends Component {
         return crimeA.distanceToUser - crimeB.distanceToUser;
       });
 
-      warCrimes[0].classList.add('closest');
+      warCrimes.forEach(crime => {
+        crime.classList.add('closest');
+        crime.style.animationPlayState = 'paused';
+      });
       warCrimes[0].style.animationPlayState = 'running';
+
+      this.props.setClosestCase(warCrimes[0].toString());
+
+      this.setState({ closestWarcrime: warCrimes[0].id });
+      this.setState({ allWarCrimes: warCrimes });
     }
+  }
+
+  chooseWarCrime(event, countryName) {
+    const allWarCrimes = this.state.allWarCrimes;
+    const selected = document.getElementById(countryName.toString());
+
+    allWarCrimes.forEach(crime => {
+      crime.style.animationPlayState = 'paused';
+    });
+    selected.style.animationPlayState = 'running';
+    this.setState({ closestWarcrime: countryName });
+  }
+
+  renderWarCrime() {
+    this.props.setClosestCase('afghanistan');
   }
 
   componentWillMount() {
@@ -151,6 +176,8 @@ class WorldMap extends Component {
 
   componentDidMount() {
     this.requestUserLocation();
+
+    scrollSpy.update();
   }
 
   render() {
@@ -165,11 +192,26 @@ class WorldMap extends Component {
           <h2><span>9</span> war crimes <span>75,000</span> victims</h2>
           <p>The crimes on the map have been committed between 2004 and now. Start exploring the map and find out which crimes are being investigated by the International Criminal Court.</p>
         </header>
+
+        <div className={styles.closestCase}>
+          <p>Closest war crime to you:</p>
+          {this.state.userLocation ? <h3>{this.state.closestWarcrime}</h3> : <div className={styles.isLoading}></div>}
+
+          <Link
+            className={this.state.userLocation ? `${styles.button} ${styles.buttonRed}` : styles.button}
+            to="selectedCase"
+            spy={true}
+            smooth={true}
+            duration={500}
+            onClick={event => this.renderWarCrime()}
+          >Learn more</Link>
+        </div>
+
         <div className={styles.WorldMapContent}>
           { featureCollection &&
             <svg
               className={styles.WorldMapSVG}
-              viewBox="0 0 961 620" preserveAspectRatio="xMidYMin slice"
+              viewBox="0 0 941 600" preserveAspectRatio="xMidYMin slice"
               ref={(svg) => { this.SVG = svg; }}
             >
               <defs>
@@ -203,6 +245,7 @@ class WorldMap extends Component {
                     className={styles.WorldMapWarCrime}
                     id={country.name}
                     key={country.name}
+                    onClick={event => this.chooseWarCrime(event, country.name)}
                   />
                 )}
               </g>
