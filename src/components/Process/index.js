@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import Waypoint from 'react-waypoint';
 import Sticky from 'react-stickynode';
 import classNames from 'classnames/bind';
 import styles from './styles.scss';
+
+import { throttle } from 'lodash';
 
 import ProcessCommunications from '../ProcessCommunications';
 import ProcessDeadEnd from '../ProcessDeadEnd';
@@ -14,11 +17,46 @@ class Process extends Component {
 
     this.state = {
       process: null,
+      progress: 0,
+      progressBarActive: false,
     }
+
+    this.calculateProgress = this.calculateProgress.bind(this);
+    this.handlePositionChange = this.handlePositionChange.bind(this);
+    this.handleProgress = throttle(this.handleProgress.bind(this), 15);
+    this.setProcessType = this.setProcessType.bind(this);
   }
 
   setProcessType(type) {
     this.setState({ process: type });
+  }
+
+  handlePositionChange(currentPosition) {
+    if (currentPosition === 'inside') {
+      this.setState({ progressBarActive: true });
+    } else if (currentPosition === 'above') {
+      this.setState({ progressBarActive: true });
+    } else {
+      this.setState({ progressBarActive: false });
+    }
+  }
+
+  handleProgress() {
+    if (this.state.progressBarActive && this.state.process) {
+      this.calculateProgress();
+    }
+  }
+
+  calculateProgress() {
+    const { top, height } = this.Main.getBoundingClientRect();
+    if (top - (window.innerHeight * 0.3) <= 0) {
+      const progress = (Math.abs(top - (window.innerHeight * 0.3)) / height) * 100 + (((Math.abs(top) + window.innerHeight) / height) * 15);
+      if (progress > 100) {
+        this.setState({ progress: 100 });
+      } else {
+        this.setState({ progress });
+      }
+    }
   }
 
   render () {
@@ -34,18 +72,31 @@ class Process extends Component {
       ProcessChoiceActive: this.state.process === 'individual',
     });
 
+    // processStep must be declared here so the ref callback can refer to it
+    let processFirstStep = null;
+
+    function addActiveClass() {
+      processFirstStep.classList.add('step-active');
+    }
+
+    function removeActiveClass() {
+      processFirstStep.classList.remove('step-active');
+    }
+
     return (
-      <section className={styles.Process}>
+      <section onWheel={this.handleProgress} className={styles.Process}>
         <header className={styles.ProcessHeader}>
           <h2>Get involved</h2>
           <p className={styles.ProcessHeaderDescription}>This is how <span>you</span> can make the difference</p>
           <p>Follow the interactive process guiding you through all the necessary steps needed to bring a war criminal to justice through the ICC as an individual. You can either explore the process, start a case, or aid one.</p>
         </header>
 
-        <ProcessProgress />
+        <ProcessProgress progress={this.state.progress} />
 
-        <main className={styles.ProcessStart}>
-          <div className={styles.ProcessFirstStep}>
+        <main ref={ ref => { this.Main = ref; } } className={styles.ProcessStart}>
+          <Waypoint onPositionChange={({ currentPosition }) => this.handlePositionChange(currentPosition)} />
+          <div className={styles.ProcessFirstStep} ref={ ref => { processFirstStep = ref; } }>
+            <Waypoint topOffset="20%" bottomOffset="30%" onEnter={addActiveClass} onLeave={removeActiveClass} />
             <h3>Choose your path</h3>
 
             <div className={styles.ProcessChoices}>
@@ -138,8 +189,7 @@ class Process extends Component {
               </div>
             }
 
-            <ProcessCommunications />
-
+            { this.state.process && <ProcessCommunications /> }
           </div>
         </main>
       </section>

@@ -36,6 +36,8 @@ function ProcessCommunications() {
           </g>
         ))}
       </svg>
+      <p>You too can strengthen existing cases in this stage by sending in additional information if you have any.</p>
+      <a href="#" className={styles.ProcessCommunicationsCTA}>I can help</a>
     </Sticky>
   );
 }
