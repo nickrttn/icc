@@ -10,6 +10,7 @@
   position: relative;
   border: 2px solid $lightGrey;
   transition: 100ms ease-out;
+  max-width: 20em;
 
   &--selected {
     border-color: white;
