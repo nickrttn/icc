@@ -3,6 +3,8 @@ import Sticky from 'react-stickynode';
 import classNames from 'classnames/bind';
 import styles from './styles.scss';
 
+import ProcessCommunications from '../ProcessCommunications';
+import ProcessDeadEnd from '../ProcessDeadEnd';
 import ProcessProgress from '../ProcessProgress';
 import ProcessStep from '../ProcessStep';
 
@@ -136,9 +138,7 @@ class Process extends Component {
               </div>
             }
 
-            <Sticky top='#process-start' bottom="#process-continuation" className={styles.ProcessCommunications}>
-              <p>The communications bar chart goes here.</p>
-            </Sticky>
+            <ProcessCommunications />
 
           </div>
         </main>

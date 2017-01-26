@@ -1,0 +1,32 @@
+@import '../../shared-styles/variables';
+
+.ProcessCommunications {
+  flex: 0 30%;
+  max-width: 25em;
+  margin-top: 11vh;
+
+  h4 {
+    font-family: 'Fira Sans', sans-serif;
+    margin-bottom: 1em;
+    margin-top: 2em;
+
+    span {
+      color: $blue;
+    }
+  }
+}
+
+.BarChartCountry {
+  rect {
+    fill: $blue;
+  }
+
+  text {
+    font-size: 0.7778em;
+    fill: white;
+  }
+
+  rect + text {
+    fill: $blue;
+  }
+}
