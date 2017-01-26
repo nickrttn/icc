@@ -165,10 +165,6 @@ class WorldMap extends Component {
     this.setState({ closestWarcrime: countryName });
   }
 
-  renderWarCrime() {
-    this.props.setClosestCase('afghanistan');
-  }
-
   componentWillMount() {
     // fetch the data needed to render countries
     this.fetchFeatureCollection();
@@ -203,7 +199,6 @@ class WorldMap extends Component {
             spy={true}
             smooth={true}
             duration={500}
-            onClick={event => this.renderWarCrime()}
           >Learn more</Link>
         </div>
 
