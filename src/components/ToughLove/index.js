@@ -6,6 +6,7 @@ import Landing from '../Landing';
 import MapCase from '../MapCase';
 import Process from '../Process';
 import WarCrimes from '../WarCrimes';
+import Conditions from '../Conditions';
 
 function ToughLove() {
   return (
@@ -13,6 +14,7 @@ function ToughLove() {
       <Landing />
       <MapCase />
       <WarCrimes />
+      <Conditions />
       <Process />
     </article>
   );
