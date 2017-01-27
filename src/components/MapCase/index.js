@@ -10,7 +10,7 @@ class MapCase extends React.Component {
     super(props);
 
     this.state = {
-      case: 'afghanistan',
+      case: '',
     };
 
     this.saveCaseToState = this.saveCaseToState.bind(this);
