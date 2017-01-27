@@ -11,16 +11,6 @@ import ProcessDeadEnd from '../ProcessDeadEnd';
 import ProcessProgress from '../ProcessProgress';
 import ProcessStep from '../ProcessStep';
 
-import tenThousand from './icons/10000.svg';
-import hundredThousand from './icons/100000.svg';
-import appeals from './icons/appeals.svg';
-import form from './icons/form.svg';
-import preTrial from './icons/pre-trial.svg';
-import processBegins from './icons/proces-begins.svg';
-import review from './icons/review.svg';
-import start from './icons/start.svg';
-import trial from './icons/trial.svg';
-
 class Process extends Component {
   constructor(props) {
     super(props);
