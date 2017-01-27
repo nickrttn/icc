@@ -1,8 +1,11 @@
 @import '../../shared-styles/variables';
+@import '../../shared-styles/buttons';
 
 .WorldMapContainer {
   display: flex;
-  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-flow: column;
   width: 100%;
   margin: 0 auto;
   min-height: 100vh;
@@ -18,6 +21,7 @@
 .WorldMapHeader {
   color: white;
   z-index: 1;
+  // flex: 1;
 
   h2 {
     margin-bottom: 0.25em;
@@ -29,17 +33,17 @@
   }
 
   p {
-    max-width: 35em;
+    max-width: 30em;
   }
 }
 
 .WorldMapContent {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   position: absolute;
   width: 100%;
   min-height: 100vh;
-  left: 0;
+  right: 0;
   top: 5vw;
 }
 
@@ -55,6 +59,7 @@
 
 .WorldMapImage {
   mask: url(#worldmap);
+  opacity: 0.75;
 }
 
 .WorldMapUser {
@@ -62,8 +67,6 @@
     fill: palegreen;
   }
 }
-
-.WorldMapWarCrime {}
 
 .WorldMapStats {
   flex: 1 20%;
@@ -91,9 +94,45 @@
   margin-bottom: 0;
 }
 
-:global(.closest) {
-  animation: attention 1.5s ease infinite;
+.Bounce {
+  animation: attention 1.5s ease infinite paused;
 }
+
+.closestCase {
+  position: relative;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0;
+  display: inline-block;
+  max-width: 18em;
+  z-index: 2;
+
+  h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: $red;
+    font-weight: bold;
+    animation: fadein 500ms;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.isLoading {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #FFF;
+  animation: spin 1s infinite linear;
+  margin: 1em 0;
+}
+
 
 @keyframes attention {
   0% {
@@ -107,4 +146,19 @@
   100% {
     transform: translateY(0);
   }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
