@@ -6,6 +6,8 @@ function ProcessStep(props) {
   // processStep must be declared here so the ref callback can refer to it
   let processStep = null;
 
+  console.log(props);
+
   function addActiveClass() {
     processStep.classList.add('step-active');
   }
