@@ -148,7 +148,6 @@ class WorldMap extends Component {
       this.props.setClosestCase(warCrimes[0].toString());
 
       this.setState({ closestWarcrime: warCrimes[0].id });
-      this.setState({ allWarCrimes: warCrimes });
     }
   }
 
