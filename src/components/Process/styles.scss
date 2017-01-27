@@ -136,8 +136,9 @@
 
   svg {
     margin: 0 auto;
-    height: 100%;
+    max-height: 100%;
     width: auto;
+    max-width: 100%;
     fill: white;
   }
 }

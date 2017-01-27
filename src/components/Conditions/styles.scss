@@ -7,3 +7,66 @@
   padding: 2vw 0 4vw;
   min-height: 100vh;
 }
+
+.ConditionsLegend {
+  display: flex;
+
+  span {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -1.5em;
+      width: 1em;
+      height: 1em;
+      background: $lightGrey;
+      transform: translateY(-50%);
+    }
+
+    &:first-of-type {
+      &:before {
+        background: $red;
+      }
+    }
+
+    &:nth-of-type(2) {
+      &:before {
+        background: $lightGrey;
+      }
+    }
+
+    &:nth-of-type(3) {
+      &:before {
+        background: $blue;
+      }
+    }
+
+    &:last-of-type {
+      &:before {
+        background: white;
+      }
+    }
+  }
+}
+
+.ConditionsLegendSecurity {
+  @extend .ConditionsLegend;
+
+  span {
+    &:first-of-type {
+      &:before {
+        background: $blue;
+      }
+    }
+
+    &:nth-of-type(2) {
+      &:before {
+        background: $lightGrey;
+      }
+    }
+  }
+}

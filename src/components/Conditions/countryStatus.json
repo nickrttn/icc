@@ -1,0 +1,801 @@
+[
+ {
+   "state": "Algeria",
+   "statute": "signed"
+ },
+ {
+   "state": "Angola",
+   "statute": "signed"
+ },
+ {
+   "state": "Armenia",
+   "statute": "signed"
+ },
+ {
+   "state": "The Bahamas",
+   "statute": "signed"
+ },
+ {
+   "state": "Bahrain",
+   "statute": "signed"
+ },
+ {
+   "state": "Cameroon",
+   "statute": "signed"
+ },
+ {
+   "state": "Egypt",
+   "statute": "signed",
+   "securityCouncil": true
+ },
+ {
+   "state": "Eritrea",
+   "statute": "signed"
+ },
+ {
+   "state": "Guinea-Bissau",
+   "statute": "signed"
+ },
+ {
+   "state": "Haiti",
+   "statute": "signed"
+ },
+ {
+   "state": "Iran",
+   "statute": "signed"
+ },
+ {
+   "state": "Israel",
+   "statute": "signed"
+ },
+ {
+   "state": "Jamaica",
+   "statute": "signed"
+ },
+ {
+   "state": "Kuwait",
+   "statute": "signed"
+ },
+ {
+   "state": "Kyrgyzstan",
+   "statute": "signed"
+ },
+ {
+   "state": "Monaco",
+   "statute": "signed"
+ },
+ {
+   "state": "Morocco",
+   "statute": "signed"
+ },
+ {
+   "state": "Mozambique",
+   "statute": "signed"
+ },
+ {
+   "state": "Oman",
+   "statute": "signed"
+ },
+ {
+   "state": "Russia",
+   "statute": "signed",
+   "securityCouncil": true
+ },
+ {
+   "state": "São Tomé and Príncipe",
+   "statute": "signed"
+ },
+ {
+   "state": "Solomon Islands",
+   "statute": "signed"
+ },
+ {
+   "state": "Sudan",
+   "statute": "signed"
+ },
+ {
+   "state": "Syria",
+   "statute": "signed"
+ },
+ {
+   "state": "Thailand",
+   "statute": "signed"
+ },
+ {
+   "state": "Ukraine",
+   "statute": "signed",
+   "securityCouncil": true
+ },
+ {
+   "state": "United Arab Emirates",
+   "statute": "signed"
+ },
+ {
+   "state": "United States of America",
+   "statute": "signed",
+   "securityCouncil": true
+ },
+ {
+   "state": "Uzbekistan",
+   "statute": "signed"
+ },
+ {
+   "state": "Yemen",
+   "statute": "signed"
+ },
+ {
+   "state": "Zimbabwe",
+   "statute": "signed"
+ },
+ {
+   "state": "Afghanistan",
+   "statute": "ratified"
+ },
+ {
+   "state": "Albania",
+   "statute": "ratified"
+ },
+ {
+   "state": "Andorra",
+   "statute": "ratified"
+ },
+ {
+   "state": "Antigua and Barbuda",
+   "statute": "ratified"
+ },
+ {
+   "state": "Argentina",
+   "statute": "ratified"
+ },
+ {
+   "state": "Australia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Austria",
+   "statute": "ratified"
+ },
+ {
+   "state": "Bangladesh",
+   "statute": "ratified"
+ },
+ {
+   "state": "Barbados",
+   "statute": "ratified"
+ },
+ {
+   "state": "Belgium",
+   "statute": "ratified"
+ },
+ {
+   "state": "Belize",
+   "statute": "ratified"
+ },
+ {
+   "state": "Benin",
+   "statute": "ratified"
+ },
+ {
+   "state": "Bolivia",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Bosnia and Herzegovina",
+   "statute": "ratified"
+ },
+ {
+   "state": "Botswana",
+   "statute": "ratified"
+ },
+ {
+   "state": "Brazil",
+   "statute": "ratified"
+ },
+ {
+   "state": "Bulgaria",
+   "statute": "ratified"
+ },
+ {
+   "state": "Burkina Faso",
+   "statute": "ratified"
+ },
+ {
+   "state": "Burundi",
+   "statute": "ratified"
+ },
+ {
+   "state": "Cambodia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Canada",
+   "statute": "ratified"
+ },
+ {
+   "state": "Cape Verde",
+   "statute": "ratified"
+ },
+ {
+   "state": "Central African Republic",
+   "statute": "ratified"
+ },
+ {
+   "state": "Chad",
+   "statute": "ratified"
+ },
+ {
+   "state": "Chile",
+   "statute": "ratified"
+ },
+ {
+   "state": "Colombia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Comoros",
+   "statute": "ratified"
+ },
+ {
+   "state": "Democratic Republic of the Congo",
+   "statute": "ratified"
+ },
+ {
+   "state": "Republic of Congo",
+   "statute": "ratified"
+ },
+ {
+   "state": "Cook Islands",
+   "statute": "ratified"
+ },
+ {
+   "state": "Costa Rica",
+   "statute": "ratified"
+ },
+ {
+   "state": "Côte d'Ivoire",
+   "statute": "ratified"
+ },
+ {
+   "state": "Croatia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Northern Cyprus",
+   "statute": "ratified"
+ },
+ {
+   "state": "Czech Republic",
+   "statute": "ratified"
+ },
+ {
+   "state": "Denmark",
+   "statute": "ratified"
+ },
+ {
+   "state": "Djibouti",
+   "statute": "ratified"
+ },
+ {
+   "state": "Dominica",
+   "statute": "ratified"
+ },
+ {
+   "state": "Dominican Republic",
+   "statute": "ratified"
+ },
+ {
+   "state": "East Timor",
+   "statute": "ratified"
+ },
+ {
+   "state": "Ecuador",
+   "statute": "ratified"
+ },
+ {
+   "state": "El Salvador",
+   "statute": "ratified"
+ },
+ {
+   "state": "Estonia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Fiji",
+   "statute": "ratified"
+ },
+ {
+   "state": "Finland",
+   "statute": "ratified"
+ },
+ {
+   "state": "France",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Gabon",
+   "statute": "ratified"
+ },
+ {
+   "state": "Gambia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Georgia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Germany",
+   "statute": "ratified"
+ },
+ {
+   "state": "Ghana",
+   "statute": "ratified"
+ },
+ {
+   "state": "Greece",
+   "statute": "ratified"
+ },
+ {
+   "state": "Grenada",
+   "statute": "ratified"
+ },
+ {
+   "state": "Guatemala",
+   "statute": "ratified"
+ },
+ {
+   "state": "Guinea Bissau",
+   "statute": "ratified"
+ },
+ {
+   "state": "Guyana",
+   "statute": "ratified"
+ },
+ {
+   "state": "Honduras",
+   "statute": "ratified"
+ },
+ {
+   "state": "Hungary",
+   "statute": "ratified"
+ },
+ {
+   "state": "Iceland",
+   "statute": "ratified"
+ },
+ {
+   "state": "Ireland",
+   "statute": "ratified"
+ },
+ {
+   "state": "Italy",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Japan",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Jordan",
+   "statute": "ratified"
+ },
+ {
+   "state": "Kenya",
+   "statute": "ratified"
+ },
+ {
+   "state": "South Korea",
+   "statute": "ratified"
+ },
+ {
+   "state": "Latvia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Lesotho",
+   "statute": "ratified"
+ },
+ {
+   "state": "Liberia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Liechtenstein",
+   "statute": "ratified"
+ },
+ {
+   "state": "Lithuania",
+   "statute": "ratified"
+ },
+ {
+   "state": "Luxembourg",
+   "statute": "ratified"
+ },
+ {
+   "state": "Macedonia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Madagascar",
+   "statute": "ratified"
+ },
+ {
+   "state": "Malawi",
+   "statute": "ratified"
+ },
+ {
+   "state": "Maldives",
+   "statute": "ratified"
+ },
+ {
+   "state": "Mali",
+   "statute": "ratified"
+ },
+ {
+   "state": "Malta",
+   "statute": "ratified"
+ },
+ {
+   "state": "Marshall Islands",
+   "statute": "ratified"
+ },
+ {
+   "state": "Mauritius",
+   "statute": "ratified"
+ },
+ {
+   "state": "Mexico",
+   "statute": "ratified"
+ },
+ {
+   "state": "Moldova",
+   "statute": "ratified"
+ },
+ {
+   "state": "Mongolia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Montenegro",
+   "statute": "ratified"
+ },
+ {
+   "state": "Namibia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Nauru",
+   "statute": "ratified"
+ },
+ {
+   "state": "Netherlands",
+   "statute": "ratified"
+ },
+ {
+   "state": "New Zealand",
+   "statute": "ratified"
+ },
+ {
+   "state": "Niger",
+   "statute": "ratified"
+ },
+ {
+   "state": "Nigeria",
+   "statute": "ratified"
+ },
+ {
+   "state": "Norway",
+   "statute": "ratified"
+ },
+ {
+   "state": "Palestine",
+   "statute": "ratified"
+ },
+ {
+   "state": "Panama",
+   "statute": "ratified"
+ },
+ {
+   "state": "Paraguay",
+   "statute": "ratified"
+ },
+ {
+   "state": "Peru",
+   "statute": "ratified"
+ },
+ {
+   "state": "Philippines",
+   "statute": "ratified"
+ },
+ {
+   "state": "Poland",
+   "statute": "ratified"
+ },
+ {
+   "state": "Portugal",
+   "statute": "ratified"
+ },
+ {
+   "state": "Romania",
+   "statute": "ratified"
+ },
+ {
+   "state": "Saint Kitts and Nevis",
+   "statute": "ratified"
+ },
+ {
+   "state": "Saint Lucia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Saint Vincent and the Grenadines",
+   "statute": "ratified"
+ },
+ {
+   "state": "Samoa",
+   "statute": "ratified"
+ },
+ {
+   "state": "San Marino",
+   "statute": "ratified"
+ },
+ {
+   "state": "Senegal",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Republic of Serbia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Seychelles",
+   "statute": "ratified"
+ },
+ {
+   "state": "Sierra Leone",
+   "statute": "ratified"
+ },
+ {
+   "state": "Slovakia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Slovenia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Spain",
+   "statute": "ratified"
+ },
+ {
+   "state": "Suriname",
+   "statute": "ratified"
+ },
+ {
+   "state": "Sweden",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Switzerland",
+   "statute": "ratified"
+ },
+ {
+   "state": "United Republic of Tanzania",
+   "statute": "ratified"
+ },
+ {
+   "state": "Tajikistan",
+   "statute": "ratified"
+ },
+ {
+   "state": "Trinidad and Tobago",
+   "statute": "ratified"
+ },
+ {
+   "state": "Tunisia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Uganda",
+   "statute": "ratified"
+ },
+ {
+   "state": "United Kingdom",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Uruguay",
+   "statute": "ratified",
+   "securityCouncil": true
+ },
+ {
+   "state": "Vanuatu",
+   "statute": "ratified"
+ },
+ {
+   "state": "Venezuela",
+   "statute": "ratified"
+ },
+ {
+   "state": "Zambia",
+   "statute": "ratified"
+ },
+ {
+   "state": "Azerbaijan",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Belarus",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Bhutan",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Brunei",
+   "statute": "unsigned"
+ },
+ {
+   "state": "China",
+   "statute": "unsigned",
+   "securityCouncil": true
+ },
+ {
+   "state": "Cuba",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Equatorial Guinea",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Ethiopia",
+   "statute": "unsigned",
+   "securityCouncil": true
+ },
+ {
+   "state": "India",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Indonesia",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Iraq",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Kazakhstan",
+   "statute": "unsigned",
+   "securityCouncil": true
+ },
+ {
+   "state": "Kiribati",
+   "statute": "unsigned"
+ },
+ {
+   "state": "North Korea",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Laos",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Lebanon",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Libya",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Malaysia",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Mauritania",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Micronesia",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Myanmar",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Nepal",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Nicaragua",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Niue",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Pakistan",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Palau",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Papua New Guinea",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Qatar",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Rwanda",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Saudi Arabia",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Singapore",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Somaliland",
+   "statute": "unsigned"
+ },
+ {
+   "state": "South Sudan",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Sri Lanka",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Swaziland",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Togo",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Tonga",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Turkey",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Turkmenistan",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Tuvalu",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Vatican City",
+   "statute": "unsigned"
+ },
+ {
+   "state": "Vietnam",
+   "statute": "unsigned"
+ }
+]
