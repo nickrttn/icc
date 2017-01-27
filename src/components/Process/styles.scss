@@ -37,6 +37,25 @@
 
 .ProcessFirstStep {
   margin: 0 0 5vw;
+  position: relative;
+}
+
+.processFirstStepIcon {
+  width: 5em;
+  height: 4.25em;
+  position: absolute;
+  top: 0;
+  left: -7.7%;
+  background: $darkGrey;
+  padding: .5em;
+  transition: all 250ms ease;
+
+  svg {
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    fill: white;
+  }
 }
 
 .ProcessChoices {
@@ -101,6 +120,25 @@
 
 .ProcessSteps {
   flex: 0 70%;
+}
+
+.ProcessStepIcon {
+  text-align: center;
+  width: 5em;
+  height: 4.25em;
+  position: absolute;
+  top: 0;
+  left: -12.5%;
+  background: $darkGrey;
+  padding: .5em;
+  transition: all 250ms ease-in-out;
+
+  svg {
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    fill: white;
+  }
 }
 
 .ProcessMarker {
