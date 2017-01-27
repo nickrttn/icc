@@ -1,0 +1,21 @@
+@import '../../shared-styles/variables';
+@import '../../shared-styles/buttons';
+
+.Preface {
+  margin: 0 5vw;
+  padding: 2vw 0 4vw;
+  min-height: 100vh;
+
+  h2 {
+    max-width: 15em;
+    font-weight: normal;
+    span {
+      font-style: italic;
+      color: $red;
+    }
+  }
+}
+.h0 {
+  font-size: 7.593em;
+  font-weight: bold;
+}
