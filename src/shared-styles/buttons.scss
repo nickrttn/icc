@@ -1,0 +1,63 @@
+.button {
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Utopia';
+  font-style: italic;
+  font-weight: bold;
+  color: $lightGrey;
+  margin-bottom: 1.5em;
+  padding: .75em 1.5em;
+  position: relative;
+  border: 2px solid $lightGrey;
+  transition: 100ms ease-out;
+  max-width: 20em;
+
+  &--selected {
+    border-color: white;
+    color: white;
+
+    &::after {
+      border-color: white;
+      transition: border 100ms ease-out;
+    }
+  }
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    &::after {
+      transform: translate(2px, 2px);
+    }
+  }
+  &:active {
+    transform: translate(4px, 4px);
+    &::after {
+      transform: translate(-4px, -4px);
+    }
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 3px; left: 3px;
+    width: calc(100% + 4px); height: calc(100% + 4px);
+    border: 2px solid $lightGrey;
+    transition: transform 100ms ease-out;
+  }
+  &.buttonRed {
+    color: white;
+    background: $red;
+    border-color: $red;
+
+    &::after {
+      border-color: $red;
+    }
+  }
+  &.buttonWhite {
+    color: white;
+    background: white;
+    border-color: white;
+
+    &::after {
+      border-color: white;
+    }
+  }
+}

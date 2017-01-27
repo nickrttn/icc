@@ -10,6 +10,7 @@ import ProcessCommunications from '../ProcessCommunications';
 import ProcessDeadEnd from '../ProcessDeadEnd';
 import ProcessProgress from '../ProcessProgress';
 import ProcessStep from '../ProcessStep';
+import Modal from '../Modal';
 
 class Process extends Component {
   constructor(props) {
@@ -19,11 +20,18 @@ class Process extends Component {
       process: null,
       progress: 0,
       progressBarActive: false,
+      modalOpen: false,
+      modal: {
+        title: '',
+        children: '',
+      }
     }
 
+    this.closeModal = this.closeModal.bind(this);
     this.calculateProgress = this.calculateProgress.bind(this);
     this.handlePositionChange = this.handlePositionChange.bind(this);
     this.handleProgress = throttle(this.handleProgress.bind(this), 15);
+    this.openModal = this.openModal.bind(this);
     this.setProcessType = this.setProcessType.bind(this);
   }
 
@@ -57,6 +65,59 @@ class Process extends Component {
         this.setState({ progress });
       }
     }
+  }
+
+  openModal(type) {
+    if (type === 'country') {
+      const children = (
+        <div>
+          <p>If you live in the Netherlands, you can find information on starting an official petition at <a href="https://www.tweedekamer.nl/hoe_werkt_het/uw_mening_telt/petitie">tweedekamer.nl</a>.</p>
+          <p>To pull this off, you will need to gather a great amount of signatures. Be prepared to campaign.</p>
+          <p>When you don't live in the Netherlands, please let us know. We'll add your country to the list once we find out how to start petitions.</p>
+        </div>
+      );
+      this.setState({
+        modalOpen: true,
+        modal: {
+          title: 'You can start a petition',
+          children,
+        }
+      });
+    } else if (type === 'individual-start') {
+      const children = (
+        <div>
+          <p>You can send an email to the <a href="mailto:otp.informationdesk@icc-cpi.int">Office of the Prosecutor</a> in which you explain what you have been through.</p>
+          <p>He will send you a form back, depending on the crime you reported, and whether that crime is already under investigation or not.</p>
+        </div>
+      );
+
+      this.setState({
+        modalOpen: true,
+        modal: {
+          title: 'You can help the ICC',
+          children,
+        }
+      });
+    } else if (type === 'individual-during') {
+      const children = (
+        <div>
+          <p>You can send an email to the <a href="mailto:otp.informationdesk@icc-cpi.int">Office of the Prosecutor</a> in which you explain what you have been through.</p>
+          <p>He will send you a form back, depending on the crime you reported, and whether that crime is already under investigation or not.</p>
+        </div>
+      );
+
+      this.setState({
+        modalOpen: true,
+        modal: {
+          title: 'You can help the ICC',
+          children,
+        }
+      });
+    }
+  }
+
+  closeModal() {
+    this.setState({ modalOpen: false });
   }
 
   render () {
@@ -112,6 +173,10 @@ class Process extends Component {
                     <p>You will need to collect a significant amount of signatures. Then you might be able to strong arm your government intro starting an investigation.</p>
                   </div>
                 </button>
+                <button
+                  className={styles.ProcessCTAButton}
+                  onClick={() => this.openModal('country')}
+                >I want to start a petition</button>
               </div>
 
               <div className={styles.ProcessChoiceContainer}>
@@ -122,6 +187,10 @@ class Process extends Component {
                     <p>The ICC will send you a form, depending on the crime you reported, which you are required to fill in and send back.</p>
                   </div>
                 </button>
+                <button
+                  className={styles.ProcessCTAButton}
+                  onClick={() => this.openModal('individual-start')}
+                >I want to send information</button>
               </div>
             </div>
           </div>
@@ -234,9 +303,14 @@ class Process extends Component {
               </div>
             }
 
-            { this.state.process && <ProcessCommunications /> }
+            { this.state.process && <ProcessCommunications openModal={this.openModal} /> }
           </div>
         </main>
+
+        <Modal
+          open={this.state.modalOpen}
+          close={this.closeModal}
+          title={this.state.modal.title}>{this.state.modal.children}</Modal>
       </section>
     );
   }

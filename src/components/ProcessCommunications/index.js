@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Sticky from 'react-stickynode';
 
 import { scaleLinear } from 'd3-scale';
@@ -6,7 +6,7 @@ import { max } from 'd3-array';
 
 import styles from './styles.scss';
 
-function ProcessCommunications() {
+function ProcessCommunications(props) {
   const communications = [
     { name: 'Afghanistan', communications: 112 },
     { name: 'Burundi', communications: 23 },
@@ -37,9 +37,16 @@ function ProcessCommunications() {
         ))}
       </svg>
       <p>You too can strengthen existing cases in this stage by sending in additional information if you have any.</p>
-      <a href="#" className={styles.ProcessCommunicationsCTA}>I can help</a>
+      <button
+        className={styles.ProcessCTAButton}
+        onClick={() => props.openModal('individual-during')}
+      >I want to start a petition</button>
     </Sticky>
   );
+}
+
+ProcessCommunications.propTypes = {
+  openModal: PropTypes.func,
 }
 
 export default ProcessCommunications;

@@ -1,8 +1,15 @@
 @import '../../shared-styles/variables';
+@import '../../shared-styles/buttons';
 
 .WarCrimes {
-  margin: 5vw;
+  margin: 0 5vw;
+  padding: 2vw 0 4vw;
+  min-height: 140vh;
 }
+
+// .ReactTabs__TabPanel--selected {
+//   animation: fadein 4s;
+// }
 
 :global(.ReactTabs) {
   display: flex;
@@ -17,21 +24,11 @@
 }
 
 :global(.ReactTabs__Tab) {
-  margin-bottom: 1.5em;
-  padding: .75em 1.5em;
-  position: relative;
-  border: 2px solid $lightGrey;
-
-  &::after {
-    position: absolute;
-    content: '';
-    top: 3px; left: 3px;
-    width: calc(100% + 4px); height: calc(100% + 4px);
-    border: 2px solid $lightGrey;
-  }
+  transition: border-color color 500ms;
 
   &--selected {
     border-color: white;
+    color: white;
 
     &::after {
       border-color: white;
@@ -42,6 +39,7 @@
 :global(.ReactTabs__TabPanel) {
   flex: 1 60%;
   margin-left: 3vw;
+  animation: fadein 1s;
 
   h3 {
     margin-bottom: .5em;
@@ -103,4 +101,15 @@
       }
     }
   }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+        margin-top: 2em;
+    }
+    to {
+        opacity:1;
+        margin-top: 0;
+    }
 }
