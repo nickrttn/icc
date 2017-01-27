@@ -174,7 +174,7 @@ class Process extends Component {
                   </div>
                 </button>
                 <button
-                  className={styles.ProcessCTAButton}
+                  className={styles.buttonBlue}
                   onClick={() => this.openModal('country')}
                 >I want to start a petition</button>
               </div>
@@ -188,7 +188,7 @@ class Process extends Component {
                   </div>
                 </button>
                 <button
-                  className={styles.ProcessCTAButton}
+                  className={styles.buttonBlue}
                   onClick={() => this.openModal('individual-start')}
                 >I want to send information</button>
               </div>
