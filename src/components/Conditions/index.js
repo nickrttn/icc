@@ -110,7 +110,7 @@ function Conditions() {
 
         <TabPanel className={styles.ConditionsTab}>
           <p>As an individual you can submit evidence for existing and non-existing cases.</p>
-          <h4>Commitment to Rome Statute</h4>
+          <p>The process for doing so is long and arduous. Success is never guaranteed. Check out the process below to learn more.</p>
         </TabPanel>
 
       </Tabs>
