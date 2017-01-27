@@ -81,7 +81,9 @@ function Case(props) {
               </div>
             </div>
             <div className={styles.caseBackgroundRight}>
-              <p>Hier komt een video</p>
+              <video width="600" height="400" controls>
+                <source src="./video/pakistan-school-attack.mp4" type="video/mp4"></source>
+              </video>
             </div>
           </div>
         </article>
