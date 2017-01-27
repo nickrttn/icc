@@ -157,14 +157,13 @@ class WorldMap extends Component {
     allWarCrimes.forEach(crime => {
       crime.style.animationPlayState = 'paused';
     });
+    
     selected.style.animationPlayState = 'running';
     this.setState({ closestWarcrime: countryName });
   }
 
   renderWarCrime() {
-    const choosenCase = this.state.closestWarcrime;
-    console.log(choosenCase);
-    this.props.setClosestCase(choosenCase);
+    this.props.setClosestCase(this.state.closestWarcrime);
   }
 
   componentWillMount() {
