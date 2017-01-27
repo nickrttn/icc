@@ -22,7 +22,7 @@ function ProcessCommunications(props) {
     .range([0, 100]);
 
   return (
-    <Sticky top='#process-start' bottom="#process-continuation" className={styles.ProcessCommunications}>
+    <Sticky top='#process-start' bottomBoundary="#process-continuation" className={styles.ProcessCommunications}>
       <h4><span>507</span> individuals already helped bring justice for these cases.</h4>
       <svg className={styles.BarChart} height={communications.length*56} width="100%">
         { communications.map((country, index) => (
