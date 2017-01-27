@@ -38,7 +38,7 @@ function ProcessCommunications(props) {
       </svg>
       <p>You too can strengthen existing cases in this stage by sending in additional information if you have any.</p>
       <button
-        className={styles.ProcessCTAButton}
+        className={styles.buttonBlue}
         onClick={() => props.openModal('individual-during')}
       >I want to start a petition</button>
     </Sticky>

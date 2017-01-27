@@ -1,0 +1,23 @@
+@import '../../shared-styles/variables';
+@import '../../shared-styles/buttons';
+
+.Footer {
+  margin: 0 5vw;
+  padding: 2vw 0 4vw;
+  min-height: 100vh;
+  // display: flex;
+  h3 {
+    max-width: 30em;
+  }
+  h2 {
+    margin: 0;
+  }
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    div {
+      flex: 1;
+    }
+  }
+}

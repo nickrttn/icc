@@ -4,20 +4,20 @@
   font-family: 'Fira Sans';
   color: $lightGrey;
   margin-bottom: 1.5em;
+  margin-right: 2em;
   padding: .75em 1.5em;
   position: relative;
   border: 2px solid $lightGrey;
   transition: 100ms ease-out;
   max-width: 20em;
 
-  &--selected {
-    border-color: white;
-    color: white;
-
-    &::after {
-      border-color: white;
-      transition: border 100ms ease-out;
-    }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 3px; left: 3px;
+    width: calc(100% + 4px); height: calc(100% + 4px);
+    border: 2px solid $lightGrey;
+    transition: transform 100ms ease-out;
   }
 
   &:hover {
@@ -32,30 +32,78 @@
       transform: translate(-4px, -4px);
     }
   }
-  &::after {
+  svg {
     position: absolute;
-    content: '';
-    top: 3px; left: 3px;
-    width: calc(100% + 4px); height: calc(100% + 4px);
-    border: 2px solid $lightGrey;
-    transition: transform 100ms ease-out;
+    left: 20px;
+    top: 12px;
   }
-  &.buttonRed {
-    color: white;
-    background: $red;
-    border-color: $red;
+}
 
-    &::after {
-      border-color: $red;
-    }
-  }
-  &.buttonWhite {
-    color: white;
-    background: white;
+.buttonWhite {
+  @extend .button;
+  color: white;
+  background: white;
+  border-color: white;
+
+  &::after {
     border-color: white;
+  }
+}
 
-    &::after {
-      border-color: white;
-    }
+.buttonRed {
+  @extend .button;
+  color: white;
+  background: $red;
+  border-color: $red;
+
+  &::after {
+    border-color: $red;
+  }
+}
+
+.buttonBlue {
+  @extend .button;
+  color: white;
+  background: $blue;
+  border-color: $blue;
+
+  &::after {
+    border-color: $blue;
+  }
+}
+
+.buttonFacebook {
+  @extend .button;
+  color: white;
+  background: #3B5998;
+  border-color: #3B5998;
+  padding-left: 3em;
+
+  &::after {
+    border-color: #3B5998;
+  }
+}
+
+.buttonTwitter {
+  @extend .button;
+  color: white;
+  background: #00B6F1;
+  border-color: #00B6F1;
+  padding-left: 3em;
+
+  &::after {
+    border-color: #00B6F1;
+  }
+}
+
+.buttonLink {
+  @extend .button;
+  color: black;
+  background: white;
+  border-color: white;
+  padding-left: 3em;
+
+  &::after {
+    border-color: white;
   }
 }

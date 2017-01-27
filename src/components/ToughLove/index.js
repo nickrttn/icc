@@ -5,9 +5,12 @@ import styles from './styles.scss';
 import Landing from '../Landing';
 import MapCase from '../MapCase';
 import Preface from '../Preface';
-import Process from '../Process';
 import WarCrimes from '../WarCrimes';
 import Conditions from '../Conditions';
+import Process from '../Process';
+import Footer from '../Footer';
+
+
 
 function ToughLove() {
   return (
@@ -18,6 +21,7 @@ function ToughLove() {
       <WarCrimes />
       <Conditions />
       <Process />
+      <Footer />
     </article>
   );
 }
