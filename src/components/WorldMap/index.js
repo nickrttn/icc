@@ -156,9 +156,15 @@ class WorldMap extends Component {
 
     allWarCrimes.forEach(crime => {
       crime.style.animationPlayState = 'paused';
-    })
+    });
     selected.style.animationPlayState = 'running';
     this.setState({ closestWarcrime: countryName });
+  }
+
+  renderWarCrime() {
+    const choosenCase = this.state.closestWarcrime;
+    console.log(choosenCase);
+    this.props.setClosestCase(choosenCase);
   }
 
   componentWillMount() {
@@ -195,6 +201,7 @@ class WorldMap extends Component {
             spy={true}
             smooth={true}
             duration={500}
+            onClick={event => this.renderWarCrime(event)}
           >Learn more</Link>
         </div>
 
