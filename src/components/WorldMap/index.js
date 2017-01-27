@@ -122,7 +122,6 @@ class WorldMap extends Component {
   calculateDistanceToUser() {
     const user = this.User;
     const warCrimes = Array.from(this.WarCrimes.children);
-    console.log(warCrimes);
 
     if (user && warCrimes) {
       const userX = user.transform.baseVal[0].matrix.e;
