@@ -59,7 +59,7 @@ class WorldMap extends Component {
 
   getPath() {
     const projection = geoMercator()
-      .fitExtent([[20, 20], [941, 600]], this.state.featureCollection)
+      .fitExtent([[20, 20], [961, 620]], this.state.featureCollection)
       .rotate([-11, 0, 0]);
 
     this.path = geoPath(projection);
@@ -122,6 +122,7 @@ class WorldMap extends Component {
   calculateDistanceToUser() {
     const user = this.User;
     const warCrimes = Array.from(this.WarCrimes.children);
+    console.log(warCrimes);
 
     if (user && warCrimes) {
       const userX = user.transform.baseVal[0].matrix.e;
@@ -141,10 +142,7 @@ class WorldMap extends Component {
         return crimeA.distanceToUser - crimeB.distanceToUser;
       });
 
-      warCrimes.forEach(crime => {
-        crime.classList.add('closest');
-        crime.style.animationPlayState = 'paused';
-      });
+      // warCrimes[0].classList.add('bounce');
       warCrimes[0].style.animationPlayState = 'running';
 
       this.props.setClosestCase(warCrimes[0].toString());
@@ -155,12 +153,12 @@ class WorldMap extends Component {
   }
 
   chooseWarCrime(event, countryName) {
-    const allWarCrimes = this.state.allWarCrimes;
     const selected = document.getElementById(countryName.toString());
+    const allWarCrimes = Array.from(this.WarCrimes.children);
 
     allWarCrimes.forEach(crime => {
       crime.style.animationPlayState = 'paused';
-    });
+    })
     selected.style.animationPlayState = 'running';
     this.setState({ closestWarcrime: countryName });
   }
@@ -206,7 +204,7 @@ class WorldMap extends Component {
           { featureCollection &&
             <svg
               className={styles.WorldMapSVG}
-              viewBox="0 0 941 600" preserveAspectRatio="xMidYMin slice"
+              viewBox="0 0 961 620" preserveAspectRatio="xMidYMin slice"
               ref={(svg) => { this.SVG = svg; }}
             >
               <defs>
@@ -231,13 +229,13 @@ class WorldMap extends Component {
                 </g>
               }
 
-              <g ref={(ref) => { this.WarCrimes = ref; }} className={styles.WorldMapWarCrimes}>
+              <g ref={(ref) => { this.WarCrimes = ref; }}>
                 { this.filterFeatureCollection().map(country =>
                   <image // Even though this looks a little nasty, it's just an svg included as an image
                     xlinkHref={location}
                     x={country.center[0] - 11}
                     y={country.center[1] - 30}
-                    className={styles.WorldMapWarCrime}
+                    className={styles.Bounce}
                     id={country.name}
                     key={country.name}
                     onClick={event => this.chooseWarCrime(event, country.name)}

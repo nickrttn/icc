@@ -68,8 +68,6 @@
   }
 }
 
-.WorldMapWarCrime {}
-
 .WorldMapStats {
   flex: 1 20%;
   align-self: flex-end;
@@ -96,8 +94,8 @@
   margin-bottom: 0;
 }
 
-:global(.closest) {
-  animation: attention 1.5s ease infinite;
+.Bounce {
+  animation: attention 1.5s ease infinite paused;
 }
 
 .closestCase {
