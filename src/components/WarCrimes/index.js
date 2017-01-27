@@ -23,9 +23,9 @@ function WarCrimes() {
 
       <Tabs>
         <TabList>
-          <Tab className={styles.button}>Genocide</Tab>
-          <Tab className={styles.button}>Crimes against humanity</Tab>
-          <Tab className={styles.button}>War crimes</Tab>
+          <Tab>Genocide</Tab>
+          <Tab>Crimes against humanity</Tab>
+          <Tab>War crimes</Tab>
         </TabList>
 
         <TabPanel className={styles.WarCrimesTab}>

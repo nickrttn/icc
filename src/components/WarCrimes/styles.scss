@@ -7,10 +7,6 @@
   min-height: 140vh;
 }
 
-// .ReactTabs__TabPanel--selected {
-//   animation: fadein 4s;
-// }
-
 :global(.ReactTabs) {
   display: flex;
 }
@@ -24,6 +20,7 @@
 }
 
 :global(.ReactTabs__Tab) {
+  @extend .button;
   transition: border-color color 500ms;
 
   &--selected {
