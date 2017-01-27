@@ -1,0 +1,28 @@
+@import '../../shared-styles/variables';
+
+.ProcessDeadEnd {
+  display: flex;
+  align-items: center;
+  margin: 10vh 0;
+
+  span {
+    background-color: $darkGrey;
+    font-size: 6em;
+    line-height: 1;
+    color: $red;
+    margin-left: -10.5%;
+    margin-right: 3vw;
+  }
+}
+
+.ProcessDeadEndContent {
+  h4 {
+    color: $red;
+    font-family: 'Fira Sans', sans-serif;
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}

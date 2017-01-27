@@ -213,6 +213,10 @@ class Process extends Component {
                   <p>The OTP must give consideration to the interests of justice.</p>
                 </ProcessStep>
 
+                <ProcessDeadEnd>
+                  <p>Your information might be inadmissible</p>
+                </ProcessDeadEnd>
+
                 <ProcessStep>
                   <h3>Information review</h3>
 
@@ -227,6 +231,10 @@ class Process extends Component {
                     <li><p>Justice is a precondition for meaningful peace. Meaning that the investigation should not disrupt the peace.</p></li>
                   </ol>
                 </ProcessStep>
+
+                <ProcessDeadEnd>
+                  <p>No authorisation for investigation from the pre-trial chamber.</p>
+                </ProcessDeadEnd>
 
                 <ProcessStep>
                   <h3>Start of the investigation</h3>
@@ -264,6 +272,10 @@ class Process extends Component {
                   <p>During the first initial appearance hearing, the pre-trial judges confirm the identity of the suspects and declare the charges of which the criminal is being accused. Practical matters such as the spoken language of the court are also established. During the second initial appearance hearing, the charges are confirmed and the victims are heard.</p>
                   <p>If the judges decide there is enough evidence against the criminal, the judges will summon the criminal to trial.</p>
                 </ProcessStep>
+
+                <ProcessDeadEnd>
+                  <p>Additional evidence is needed or the charges need to be amended. When neither are possible the case is closed.</p>
+                </ProcessDeadEnd>
 
                 <p className={styles.ProcessMarker}>Trial phase</p>
 
